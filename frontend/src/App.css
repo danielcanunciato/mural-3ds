@@ -1,0 +1,131 @@
+:root {
+  --title-color       : white;
+  --info-color        : rgb(214, 204, 220);
+
+  --card              : rgb(47, 41, 53);
+  --card-grad         : rgb(61, 52, 69);
+  --class-top         : #c8b7e8;
+  --class-bot         : #135690;
+
+  --background-colour : rgb(33, 30, 38);
+}
+
+* {
+  font-family: "Arial Bold", sans-serif;
+  user-select: none;
+}
+
+h1,h2,h3,h4 {
+  color: var(--title-color);
+}
+p {
+  color: var(--info-color);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--background-colour);
+}
+
+.lricon { 
+  color: var(--class-top);
+  transform: translateY(4px) scale(1.1);
+}
+#title-icon {
+  color: var(--title-color);
+}
+#desc-icon {
+  color: var(--info-color);
+}
+
+.med {
+  transform: translateY(6px) scale(.9);
+}
+.small {
+  transform: translateY(6px) scale(.75);
+}
+
+.title-img {
+  width: 20%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transform: scale(1.2);
+}
+.description {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* CARD */
+.cards-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.section-subject {
+  width: 70vw;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.subject {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: white;
+}
+
+.card {
+  border-radius: 40px 0 40px 0;
+  filter: drop-shadow(0 0 5px rgb(60, 41, 68));
+  padding: 14px;
+  padding-top: 0;
+  background: linear-gradient(to left, var(--card), var(--card-grad));
+}
+
+.expired {
+  filter: brightness(50%) drop-shadow(0 0 5px rgb(167, 5, 5));
+  background: linear-gradient(to left, rgb(95, 15, 15), var(--card-grad));
+}
+
+.card-title {
+  margin-top: 30px;
+}
+
+.card-summary {
+  margin-top: -10px;
+}
+
+.card-list {
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.card-item {
+  color: var(--class-top);
+  list-style-type: none;  
+}
+
+.card-footer {
+  display: block;
+  margin-top: auto;
+}
+
+.expired-lesson {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: -30px;
+  text-decoration: underline;
+  color: rgb(250, 155, 155);
+}
