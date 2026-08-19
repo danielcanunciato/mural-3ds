@@ -112,6 +112,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: auto;
+  transition: .5s ease;
   gap: 20px;
 }
 
@@ -126,9 +127,10 @@ body {
 
 .subject-selected + section {
   padding: 25px;
-  border-radius: 60px 60px 0 0;
+  margin-top: -20px;
+  border: 2px dotted rgb(194, 0, 253);
+  border-radius: 0 0 60px 60px;
   filter: drop-shadow(0 0 10px black);
-  transition: .5s ease;
   background-color: rgba(170, 24, 255, 0.13);
 }
 
@@ -185,21 +187,19 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding: 24px 16px; /* Mantém um respiro confortável no topo e base */
+    padding: 24px 16px;
   }
 
-  /* Imagem ganha destaque proporcional sem achatar */
   .title-img {
     width: 45%; 
     max-width: 220px;
-    transform: scale(1); /* Remove o zoom excessivo que cortaria em telas finas */
+    transform: scale(1);
   }
 
-  /* Botões empilham, mas ganham área de clique generosa */
   .jumpto {
     flex-direction: column;
     width: 100%;
-    gap: 14px; /* Aumenta o espaço entre os botões para evitar cliques errados */
+    gap: 14px;
   }
 
   .jumpto-btn {
@@ -208,20 +208,16 @@ body {
     border-radius: 12px; 
   }
 
-  /* O grid vira uma coluna, dando o tamanho total da tela para o card respirar */
   .section-subject {
-    width: 100%; /* Ocupa toda a largura disponível da tela */
+    width: 100%;
     grid-template-columns: 1fr; 
-    gap: 24px; /* Aumenta o espaçamento vertical entre um card e outro */
+    gap: 24px;
   }
-
-  /* Mantém o preenchimento interno robusto do card original */
   .card {
     padding: 24px; 
     border-radius: 35px 0 35px 0; /* Preserva os cantos estilizados e expressivos */
   }
 
-  /* Garante que o contêiner ativo envolva o conteúdo com folga */
   .subject-selected + section {
     padding: 30px 20px; 
     border-radius: 45px 45px 0 0;
