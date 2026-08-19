@@ -95,6 +95,7 @@ body {
 
 .divider {
   border-bottom: 4px dotted white;
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -180,4 +181,49 @@ body {
   margin-bottom: -30px;
   text-decoration: underline;
   color: rgb(250, 155, 155);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 24px 16px; /* Mantém um respiro confortável no topo e base */
+  }
+
+  /* Imagem ganha destaque proporcional sem achatar */
+  .title-img {
+    width: 45%; 
+    max-width: 220px;
+    transform: scale(1); /* Remove o zoom excessivo que cortaria em telas finas */
+  }
+
+  /* Botões empilham, mas ganham área de clique generosa */
+  .jumpto {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px; /* Aumenta o espaço entre os botões para evitar cliques errados */
+  }
+
+  .jumpto-btn {
+    width: 100%;
+    padding: 16px; /* Aumenta o espaçamento interno para facilitar o toque */
+    border-radius: 12px; 
+  }
+
+  /* O grid vira uma coluna, dando o tamanho total da tela para o card respirar */
+  .section-subject {
+    width: 100%; /* Ocupa toda a largura disponível da tela */
+    grid-template-columns: 1fr; 
+    gap: 24px; /* Aumenta o espaçamento vertical entre um card e outro */
+  }
+
+  /* Mantém o preenchimento interno robusto do card original */
+  .card {
+    padding: 24px; 
+    border-radius: 35px 0 35px 0; /* Preserva os cantos estilizados e expressivos */
+  }
+
+  /* Garante que o contêiner ativo envolva o conteúdo com folga */
+  .subject-selected + section {
+    padding: 30px 20px; 
+    border-radius: 45px 45px 0 0;
+  }
 }

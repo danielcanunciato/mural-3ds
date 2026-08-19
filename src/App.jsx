@@ -53,18 +53,22 @@ export default function App() {
   const subjects_contents = {
 
     "portugues" : [
+      /*
       {
-        summary: "test",
+        summary: "Apostila",
         items:  [
-          "Aula"
+          "Aula 18",
+          "Aula 19"
         ],
-        deadline: "01/01/2026",
+        deadline: "25/08/2026",
         expired: false
       }
+      */
 
     ],
 
     "matematica" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -73,9 +77,11 @@ export default function App() {
         deadline: "01/02/2026",
         expired: false
       }
+      */
     ],
 
     "historia" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -84,9 +90,11 @@ export default function App() {
         deadline: "01/03/2026",
         expired: false
       }
+      */
     ],
 
     "modelagem" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -95,9 +103,11 @@ export default function App() {
         deadline: "01/04/2026",
         expired: false
       }
+      */
     ],
 
     "mobile" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -106,9 +116,11 @@ export default function App() {
         deadline: "01/05/2026",
         expired: false
       }
+      */
     ],
 
     "ia" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -117,9 +129,11 @@ export default function App() {
         deadline: "01/06/2026",
         expired: false
       }
+      */
     ],
 
     "tcc" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -128,9 +142,11 @@ export default function App() {
         deadline: "01/07/2026",
         expired: false
       }
+      */
     ],
 
     "frontend" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -139,9 +155,11 @@ export default function App() {
         deadline: "01/08/2026",
         expired: false
       }
+      */
     ],
 
     "backend" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -150,9 +168,11 @@ export default function App() {
         deadline: "01/09/2026",
         expired: false
       }
+      */
     ],
 
     "versionamento" : [
+      /*
       {
         summary: "test",
         items:  [
@@ -161,6 +181,7 @@ export default function App() {
         deadline: "01/10/2026",
         expired: false
       }
+      */
     ]
 
     
@@ -214,7 +235,7 @@ export default function App() {
 
           ["modelagem de banco de dados", "programação mobile", "inteligência artificial",
             "projeto multidisciplinar (tcc)", "programação front-end", "programação back-end",
-            "versionamento de código e sistemas de mensageria"
+            "versionamento de código"
           ].map((item, index) => (
             <button className="jumpto-btn" onClick={()=>JumpToSection(`0${index}`)} key={index}>
               {item}
@@ -239,6 +260,8 @@ export default function App() {
 
         }
       </div>
+
+      <div className="divider"></div>
 
       {/* ////////////// MATÉRIAS DO TÉCNICO ////////////// */}
       <h1 className="category-title">MATÉRIAS DO TÉCNICO</h1>
