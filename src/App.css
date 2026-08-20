@@ -100,6 +100,48 @@ body {
   margin-bottom: 40px;
 }
 
+/* PRIORITY */
+.priority-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+  width: 80dvw;
+  border-radius: 90px 90px 10px 10px;
+  filter: drop-shadow(0 0 5px darkred);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(rgb(31, 5, 1), rgb(66, 6, 4))
+}
+
+.priority-title {
+  color: rgb(202, 60, 60);
+  margin-bottom: -20px;
+}
+
+.priority-list {
+  list-style-type: none;
+  margin-bottom: -20px;
+}
+
+.priority-list li {
+  margin-bottom: 50px;
+  margin-left: -10px;
+  width: 100%;
+}
+
+.priority-list li p {
+  margin-bottom: -10px;
+}
+
+.priority-list li small p {
+  color: rgb(249, 95, 95);
+  font-style: italic;
+}
+
 /* CARD */
 .cards-holder {
   display: flex;

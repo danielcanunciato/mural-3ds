@@ -7,6 +7,7 @@ import {
   Download,
   Info,
   MessageSquareQuote,
+  OctagonAlert,
 } from "lucide-react";
 import { useEffect, useRef, useState, memo, useCallback, useMemo } from "react";
 
@@ -96,13 +97,13 @@ const subjects_contents = {
     {
       summary: "Entrega da Redação (Físico)",
       items: [],
-      deadline: "??/08/2026",
-      expired: false,
+      deadline: "18/08/2026",
+      expired: true,
     },
     {
       summary: "Apostila",
       items: ["Até a Página 31"],
-      deadline: "30/10/2026",
+      deadline: "30/09/2026",
       expired: false,
     },
     {
@@ -115,7 +116,16 @@ const subjects_contents = {
       expired: true,
     },
   ],
-  matematica: [],
+  matematica: [
+    {
+      summary: "Tarefas",
+      items: [
+        "Tarefa 1: Trigonometria no triângulo retângulo",
+      ],
+      deadline: "05/08/2026",
+      expired: true,
+    },
+  ],
   historia: [
     {
       summary:
@@ -131,6 +141,16 @@ const subjects_contents = {
         files: ["Historia_Seminario_01.jpeg", "Historia_Seminario_02.jpeg"],
       },
       deadline: "28/08/2026 - 04/09/2026",
+      expired: false,
+    },
+
+    {
+      summary:
+        "Tarefas SP",
+      items: [
+        "Tarefa 1: Guerra Fria",
+      ],
+      deadline: "03/09/2026",
       expired: false,
     },
   ],
@@ -262,7 +282,7 @@ const subjects_contents = {
           "TCC_Roteiro_Aula3_SEM17.docx",
         ],
       },
-      deadline: "21/08/2026",
+      deadline: "23/08/2026 (Domingo)",
       expired: false,
     },
     {
@@ -282,7 +302,7 @@ const subjects_contents = {
           "TCC_MaterialDeApoio_SEM18.xlsx",
         ],
       },
-      deadline: "23/08/2026",
+      deadline: "23/08/2026 (Domingo)",
       expired: false,
     },
   ],
@@ -460,6 +480,22 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const getSortedItems=(subjectKey)=>{
+    const items = subjects_contents[subjectKey] || [];
+
+    return [...items].sort((a,b)=>(a.expired?1:0)-(b.expired?1:0));
+  }
+
+  const prioridades = [
+    ["Front-End: Semana 15 e 16", "21/08/2026"],
+    ["Back-End: Semana 15 e 16", "21/08/2026"],
+    ["Versionamento: Semana 15 e 16", "21/08/2026"],
+    ["Modelagem: Semana 15 e 16", "21/08/2026"],
+    ["Projeto Multi. (TCC): Semana 15, 16 e 17", "21/08/2026"],
+    ["(BASE) Redação Online", "21/08/2026"],
+    ["Tarefas SP", "Expirado mas da para fazer"]
+  ]
+
   return (
     <>
       <style>
@@ -487,7 +523,7 @@ export default function App() {
       </p>
 
       <p style={{ textAlign: "center", fontWeight: "bold" }}>TÉCNICO</p>
-      <div className="jumpto">
+      <div className="jumpto" style={{marginBottom: "30px"}}>
         {[
           "modelagem de banco de dados",
           "programação mobile",
@@ -519,6 +555,22 @@ export default function App() {
           </button>
         ))}
       </div>
+      
+      <div className="divider"></div>
+
+      <div className="priority-holder">
+        <h1 className="priority-title">ATIVIDADES EM PRIORIDADES</h1>
+        <ul className="priority-list">
+          {
+            prioridades.map((prioridade, k) => (
+              <li>
+                <p><b>{prioridade[0]}</b></p>
+                <small><p><OctagonAlert className="lricon small" />ATÉ: {prioridade[1]}</p></small>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
 
       <div className="divider"></div>
 
@@ -536,7 +588,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["modelagem"].map((item, index) => (
+          {getSortedItems("modelagem").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº Kassio Eugenio"}
@@ -564,7 +616,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["mobile"].map((item, index) => (
+          {getSortedItems("mobile").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº Kassio Eugenio"}
@@ -591,7 +643,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["ia"].map((item, index) => (
+          {getSortedItems("ia").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº Rogério Rocha"}
@@ -619,7 +671,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["tcc"].map((item, index) => (
+          {getSortedItems("tcc").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº Rogério Rocha"}
@@ -647,7 +699,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["frontend"].map((item, index) => (
+          {getSortedItems("frontend").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº João Yokada"}
@@ -675,7 +727,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["backend"].map((item, index) => (
+          {getSortedItems("backend").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº João Yokada"}
@@ -703,7 +755,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["versionamento"].map((item, index) => (
+          {getSortedItems("versionamento").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº João Yokada"}
@@ -737,7 +789,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["portugues"].map((item, index) => (
+          {getSortedItems("portugues").map((item, index) => (
             <Card
               key={index}
               teacher={"Profª Maria Madalena"}
@@ -764,7 +816,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["matematica"].map((item, index) => (
+          {getSortedItems("matematica").map((item, index) => (
             <Card
               key={index}
               teacher={"Profº Jakson Aparecido"}
@@ -791,7 +843,7 @@ export default function App() {
         </h1>
 
         <section className="section-subject">
-          {subjects_contents["historia"].map((item, index) => (
+          {getSortedItems("historia").map((item, index) => (
             <Card
               key={index}
               teacher={"Profª Cláudia Lopes"}
