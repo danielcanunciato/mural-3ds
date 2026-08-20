@@ -12,6 +12,7 @@
 
 * {
   font-family: "Arial Bold", sans-serif;
+  transition: .5s ease;
   user-select: none;
 }
 
@@ -114,6 +115,7 @@ body {
   grid-template-rows: auto;
   transition: .5s ease;
   gap: 20px;
+  align-items: start;
 }
 
 .section-title {
@@ -185,6 +187,77 @@ body {
   color: rgb(250, 155, 155);
 }
 
+.downloads-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  text-decoration: underline;
+  font-weight: bold;
+  color: rgb(197, 155, 232);
+}
+
+.download-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -24px;
+  gap: 30px;
+}
+
+.download-btn {
+  background: rgba(174, 136, 235, 0.08);
+  border: 1px solid rgba(129, 79, 247, 0.15);
+  color: #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  font-size: 0.85em;
+  margin-left: -20px;
+  margin-bottom: 10px;
+  width: 80%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.download-btn:hover {
+  background: rgba(79, 195, 247, 0.15);
+  border-color: rgba(79, 195, 247, 0.4);
+  color: #4fc3f7;
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(79, 195, 247, 0.1);
+}
+
+.download-btn:active {
+  transform: scale(0.98);
+}
+
+.lricon-d {
+  transform: perspective(600px) rotateY(-30deg) rotateX(15deg) skewY(-8deg);
+  margin-bottom: 10px;
+}
+
+.lricon-d:has(~.download-btn:hover) {
+  transform: scale(1.2) perspective(600px) rotateY(-30deg) rotateX(15deg) skewY(-8deg);
+  color: cyan;
+}
+
+.download-anchor:hover {
+  cursor: default;
+}
+
+
+
+
+
+
+
+
+/*  MOBILE   */
+
 @media (max-width: 768px) {
   body {
     padding: 24px 16px;
@@ -220,6 +293,5 @@ body {
 
   .subject-selected + section {
     padding: 30px 20px; 
-    border-radius: 45px 45px 0 0;
   }
 }
