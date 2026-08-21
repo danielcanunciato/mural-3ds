@@ -491,6 +491,7 @@ export default function App() {
     ["Back-End: Semana 15 e 16", "21/08/2026"],
     ["Versionamento: Semana 15 e 16", "21/08/2026"],
     ["Modelagem: Semana 15 e 16", "21/08/2026"],
+    ["IA: Semana 15 e 16", "21/08/2026"], 
     ["Projeto Multi. (TCC): Semana 15, 16 e 17", "21/08/2026"],
     ["(BASE) Redação Online", "21/08/2026"],
     ["Tarefas SP", "Expirado mas da para fazer"]
