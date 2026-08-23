@@ -92,7 +92,7 @@ const subjects_contents = {
       summary: "Entrega da Redação (Tarefas)",
       items: [],
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Entrega da Redação (Físico)",
@@ -168,7 +168,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registros Semana 16 (Em Grupo)",
@@ -183,7 +183,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registros Semana 17",
@@ -211,7 +211,7 @@ const subjects_contents = {
         files: ["InteligenciaArtificial_Sem15.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Roteiro (Semana 16)",
@@ -221,7 +221,7 @@ const subjects_contents = {
         files: ["InteligenciaArtificial_Sem16.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Roteiro (Semana 17)",
@@ -249,7 +249,7 @@ const subjects_contents = {
         files: ["TCC_Slides_Aula1_SEM15.pdf", "TCC_Roteiro_Aula2_SEM15.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Semana 16: Leitura dos slides e roteiro",
@@ -269,7 +269,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Semana 17: Leitura dos slides e roteiro",
@@ -282,8 +282,8 @@ const subjects_contents = {
           "TCC_Roteiro_Aula3_SEM17.docx",
         ],
       },
-      deadline: "23/08/2026 (Domingo)",
-      expired: false,
+      deadline: "21/08/2026",
+      expired: true,
     },
     {
       summary: "Semana 18: Leitura dos slides e roteiro",
@@ -321,7 +321,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registro (Semana 16)",
@@ -331,7 +331,7 @@ const subjects_contents = {
         files: ["Frontend_Sem16.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registro (Semana 17)",
@@ -353,7 +353,7 @@ const subjects_contents = {
         files: ["Backend_Sem15.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registro (Semana 16)",
@@ -363,7 +363,7 @@ const subjects_contents = {
         files: ["Backend_Sem16.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registro (Semana 17)",
@@ -385,7 +385,7 @@ const subjects_contents = {
         files: ["Versionamento_Sem15.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registro (Semana 16)",
@@ -395,7 +395,7 @@ const subjects_contents = {
         files: ["Versionamento_Sem16.docx"],
       },
       deadline: "21/08/2026",
-      expired: false,
+      expired: true,
     },
     {
       summary: "Registro (Semana 17)",
@@ -486,39 +486,10 @@ export default function App() {
     return [...items].sort((a,b)=>(a.expired?1:0)-(b.expired?1:0));
   }
 
-  const prioridades = [
-    ["Front-End: Semana 15 e 16", "21/08/2026"],
-    ["Back-End: Semana 15 e 16", "21/08/2026"],
-    ["Versionamento: Semana 15 e 16", "21/08/2026"],
-    ["Modelagem: Semana 15 e 16", "21/08/2026"],
-    ["Mobile: Semana 15", "21/08/2026"],
-    ["IA: Semana 15 e 16", "21/08/2026"], 
-    ["Projeto Multi. (TCC): Semana 15, 16 e 17", "21/08/2026"],
-    ["(BASE) Redação Online", "21/08/2026"],
-    ["Tarefas SP", "Expirado mas da para fazer"]
-  ]
+  const prioridades = []
 
   return (
     <>
-      <style>
-        {`
-          .card--enter {
-            opacity: 0;
-            animation: fadeInUp 0.4s ease forwards;
-          }
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        `}
-      </style>
-
       <img className="title-img" src={"/titulo.png"} />
       <p className="description">
         Atividades recentes serão mostrados aqui com o prazo
@@ -558,21 +529,26 @@ export default function App() {
         ))}
       </div>
       
-      <div className="divider"></div>
+      { prioridades.length > 0 &&
+        <>
+        
+          <div className="divider"></div>
 
-      <div className="priority-holder">
-        <h1 className="priority-title">ATIVIDADES EM PRIORIDADES</h1>
-        <ul className="priority-list">
-          {
-            prioridades.map((prioridade, k) => (
-              <li>
-                <p><b>{prioridade[0]}</b></p>
-                <small><p><OctagonAlert className="lricon small" />ATÉ: {prioridade[1]}</p></small>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+          <div className="priority-holder">
+            <h1 className="priority-title">ATIVIDADES EM PRIORIDADES</h1>
+            <ul className="priority-list">
+              {
+                prioridades.map((prioridade, k) => (
+                  <li>
+                    <p><b>{prioridade[0]}</b></p>
+                    <small><p><OctagonAlert className="lricon small" />ATÉ: {prioridade[1]}</p></small>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </>
+      }
 
       <div className="divider"></div>
 
@@ -866,32 +842,7 @@ export default function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          style={{
-            position: "fixed",
-            bottom: "12px",
-            right: "12px",
-            padding: "14px",
-            backgroundColor: "#3b239b",
-            color: "white",
-            border: "none",
-            borderRadius: "50%",
-            cursor: "pointer",
-            fontSize: "24px",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
-            zIndex: 1000,
-            transition: "all 0.3s ease",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = "scale(1.1)";
-            e.target.style.backgroundColor = "#5139af";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = "scale(1)";
-            e.target.style.backgroundColor = "#3b239b";
-          }}
+          className="scroll-btn"
         >
           <ArrowBigUpDash />
         </button>
