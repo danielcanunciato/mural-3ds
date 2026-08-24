@@ -199,8 +199,9 @@ const subjects_contents = {
       expired: false,
     },
 
-
   ],
+
+
   matematica: [
     {
       summary: "Tarefas",
@@ -212,6 +213,8 @@ const subjects_contents = {
       expired: false,
     },
   ],
+
+
   historia: [
     {
       summary:
@@ -260,6 +263,8 @@ const subjects_contents = {
       expired: false,
     },
   ],
+
+
   modelagem: [
     {
       summary: "Registros Semana 15 (Em Grupo)",
@@ -277,6 +282,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registros Semana 16 (Em Grupo)",
       items: ["Aula 1 - Roteiro", "Aula 2 - Slide (20 e 21)", "Aula 3 - Roteiro", "Aula 4 - Roteiro"],
@@ -293,6 +299,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registros Semana 17",
       items: ["Aula 1 - Slide (20 e 21)", "Aula 2 - Slide (20 e 21)", "Aula 3 - Roteiro", "Aula 4 - Roteiro"],
@@ -310,6 +317,8 @@ const subjects_contents = {
       expired: true,
     },
   ],
+
+
   mobile: [
     {
       summary: "Roteiros (Semana 15) [UMA AULA PELO MENOS]",
@@ -335,6 +344,7 @@ const subjects_contents = {
     },
   ],
 
+
   ia: [
     {
       summary: "Roteiro (Semana 15)",
@@ -347,6 +357,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Roteiro (Semana 16)",
       items: ["Aula 3 - Roteiro"],
@@ -358,6 +369,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Roteiro (Semana 17)",
       items: ["Aula 3 - Roteiro"],
@@ -369,6 +381,7 @@ const subjects_contents = {
       priority: false,
       expired: false,
     },
+
     {
       summary: 'Relatório "Mulheres Mil"',
       items: ["Relatório em Folha de Almaço"],
@@ -377,6 +390,8 @@ const subjects_contents = {
       expired: true,
     },
   ],
+
+
   tcc: [
     {
       summary: "Semana 15: Leitura dos slides e roteiro",
@@ -427,6 +442,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Semana 18: Leitura dos slides e roteiro",
       items: [
@@ -448,6 +464,8 @@ const subjects_contents = {
       expired: true,
     },
   ],
+
+
   frontend: [
     {
       summary: "Registro (Semana 15)",
@@ -466,6 +484,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registro (Semana 16)",
       items: ["Aula 1: Roteiro Adaptado"],
@@ -477,6 +496,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registro (Semana 17)",
       items: ["Aula 2: Roteiro Adaptado"],
@@ -489,6 +509,8 @@ const subjects_contents = {
       expired: false,
     },
   ],
+
+
   backend: [
     {
       summary: "Registro (Semana 15)",
@@ -501,6 +523,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registro (Semana 16)",
       items: ["Aula 2: Roteiro Adaptado"],
@@ -512,6 +535,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registro (Semana 17)",
       items: ["Aula 2: Roteiro Adaptado"],
@@ -523,6 +547,8 @@ const subjects_contents = {
       priority: false,
       expired: false,
     },
+
+
   ],
   versionamento: [
     {
@@ -533,8 +559,10 @@ const subjects_contents = {
         files: ["Versionamento_Sem15.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
+
     {
       summary: "Registro (Semana 16)",
       items: ["Semana 16: Aula 3"],
@@ -546,6 +574,7 @@ const subjects_contents = {
       priority: false,
       expired: true,
     },
+
     {
       summary: "Registro (Semana 17)",
       items: ["Semana 17: Aula 3"],
@@ -962,8 +991,8 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
-              isPriority={item.priority}
               downloads={item.downloads}
+              isPriority={item.priority}
               isExpired={item.expired}
               delay={index * 60}
             />
