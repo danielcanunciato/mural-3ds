@@ -5,11 +5,12 @@ import {
   BookText,
   ClockAlert,
   Download,
+  ExternalLink,
   Info,
   MessageSquareQuote,
   OctagonAlert,
 } from "lucide-react";
-import { useEffect, useRef, useState, memo, useCallback, useMemo } from "react";
+import { useEffect, useRef, useState, memo, useCallback } from "react";
 
 const DownloadButton = memo(function DownloadButton({ item_name, item_path }) {
   const handleDownload = () => {
@@ -29,20 +30,35 @@ const DownloadButton = memo(function DownloadButton({ item_name, item_path }) {
   );
 });
 
+const LinkButton = memo(function LinkButton({item_title, item_link}) {
+  const handleOpenLink = () => {
+    window.open(item_link, "_blank");
+  }
+
+  return (
+    <button type="button" className="download-btn" onClick={handleOpenLink}>
+      {item_title}
+    </button>
+  )
+})
+
 const Card = memo(function Card({
   content,
   teacher,
   subject,
   downloads,
+  links,
+  isPriority,
   isExpired,
   delay = 0,
 }) {
   return (
     <div
-      className={`card ${isExpired ? "expired" : ""} card--enter`}
+      className={`card ${isExpired ? "expired" : ""} ${isPriority ? "priority" : ""} card--enter`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {isExpired && <p className="expired-lesson">EXPIRADO</p>}
+      {isPriority && <p className="priority-lesson">PRIORIDADE</p>}
 
       <h2 className="card-title">
         <MessageSquareQuote id="title-icon" className="lricon" /> {teacher}
@@ -59,7 +75,13 @@ const Card = memo(function Card({
       <ul className="card-list">
         {content.items.map((value, index) => (
           <li className="card-item" key={index}>
-            <BookText className="lricon small" /> {value}
+            {
+              value == "" ? (<p style={{marginBottom: '0'}}>{"<=============>"}</p>) :
+              
+              (
+                <><BookText className="lricon small" /> {value}</>
+              )
+            }
           </li>
         ))}
       </ul>
@@ -78,6 +100,20 @@ const Card = memo(function Card({
         </ul>
       )}
 
+      {links && Object.keys(links)?.length > 0 && (
+        <ul className="card-list" style={{ marginTop: "10px" }}>
+          <p className="downloads-title">Links</p>
+          {links.map((item, i) => (
+            <li className="card-item" key={i}>
+              <div className="download-div">
+                <ExternalLink className="lricon-d" />
+                <LinkButton item_title={links[i][0]} item_link={links[i][1]} />
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+
       <p className="card-footer" style={{ color: "#f0a8a8" }}>
         <ClockAlert className="lricon small" style={{ color: "#f0a8a8" }} />{" "}
         Prazo: {content.deadline}
@@ -89,23 +125,33 @@ const Card = memo(function Card({
 const subjects_contents = {
   portugues: [
     {
-      summary: "Entrega da Redação (Tarefas)",
-      items: [],
+      summary: "Entrega da Redação 01 (Tarefas)",
+      items: [
+        "Tema: Combate ao racismo no mercado de trabalho: responsabilidade estatal ou das empresas?"
+      ],
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
+
     {
-      summary: "Entrega da Redação (Físico)",
-      items: [],
-      deadline: "18/08/2026",
+      summary: "Entrega da Redação 01 (Físico)",
+      items: [
+        "Tema: Combate ao racismo no mercado de trabalho: responsabilidade estatal ou das empresas?"
+      ],
+      deadline: "24/08/2026",
+      priority: false,
       expired: true,
     },
+
     {
       summary: "Apostila",
-      items: ["Até a Página 31"],
+      items: ["Até a Aula 6"],
       deadline: "30/09/2026",
+      priority: false,
       expired: false,
     },
+
     {
       summary: "Tarefas",
       items: [
@@ -113,8 +159,47 @@ const subjects_contents = {
         "Tarefa 2: Texto dissertativo-argumentativo",
       ],
       deadline: "T1: 12/08/2026 // T2: 18/08/2026",
+      priority: false,
       expired: true,
     },
+
+    {
+      summary: "Entrega da Redação 02 (Tarefas)",
+      items: [
+        "Tema: A manutenção de privilégios e seus impactos no desenvolvimento social brasileiro",
+      ],
+      deadline: "24/09/2026",
+      priority: false,
+      expired: false,
+    },
+
+    {
+      summary: "Entrega da Redação 02 (Físico)",
+      items: [
+        "Tema: A manutenção de privilégios e seus impactos no desenvolvimento social brasileiro",
+      ],
+      deadline: "28/09/2026",
+      priority: false,
+      expired: false,
+    },
+
+    {
+      summary: "Seminário - A terceira geração modernista | Trabalho em grupo com os grupos do TCC",
+      items: [
+        "Apresentação visual DEVE ser feito pelo Canva",
+        "Divisão do conteúdo DEVE ser equilibrada.",
+        "Cada grupo tem de 15 a 20 minutos de apresentação.",
+        "",
+        "GRUPO 1: João Cabral de Melo Neto",
+        "GRUPO 2: Guimarães Rosa",
+        "GRUPO 3: Clarice Lispector",
+      ],
+      deadline: "08/09/2026",
+      priority: false,
+      expired: false,
+    },
+
+
   ],
   matematica: [
     {
@@ -123,6 +208,7 @@ const subjects_contents = {
         "Tarefa 1: Trigonometria no triângulo retângulo",
       ],
       deadline: "31/08/2026",
+      priority: false,
       expired: false,
     },
   ],
@@ -141,6 +227,7 @@ const subjects_contents = {
         files: ["Historia_Seminario_01.jpeg", "Historia_Seminario_02.jpeg"],
       },
       deadline: "28/08/2026 - 04/09/2026",
+      priority: false,
       expired: false,
     },
 
@@ -154,6 +241,22 @@ const subjects_contents = {
 
       ],
       deadline: "04/09/2026",
+      priority: false,
+      expired: false,
+    },
+
+    {
+      summary:
+        "Prepara SP - Logue na Sala do Futuro e depois clique no link",
+      items: [
+        "História -- Unidade 8: Era Vargas e Guerra-Fria"
+      ],
+      links: [
+        ["Cursos: História", "https://preparasp.jovensgenios.com/cursos/019c07ee-5114-720c-aa0a-8816c7c33a20"]
+
+      ],
+      deadline: "04/09/2026",
+      priority: false,
       expired: false,
     },
   ],
@@ -171,6 +274,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -186,6 +290,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -201,6 +306,7 @@ const subjects_contents = {
         ],
       },
       deadline: "23/08/2026 (Domingo)",
+      priority: false,
       expired: true,
     },
   ],
@@ -212,7 +318,9 @@ const subjects_contents = {
         "Aula 2 - Perguntas"
       ],
       deadline: "21/08/2026",
+      priority: false,
       expired: false
+
     },
 
     {
@@ -222,6 +330,7 @@ const subjects_contents = {
         "Aula 2 - Perguntas"
       ],
       deadline: "21/08/2026",
+      priority: false,
       expired: false
     },
   ],
@@ -235,6 +344,7 @@ const subjects_contents = {
         files: ["InteligenciaArtificial_Sem15.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -245,6 +355,7 @@ const subjects_contents = {
         files: ["InteligenciaArtificial_Sem16.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -255,12 +366,14 @@ const subjects_contents = {
         files: ["InteligenciaArtificial_Sem17.docx"],
       },
       deadline: "23/08/2026",
+      priority: false,
       expired: false,
     },
     {
       summary: 'Relatório "Mulheres Mil"',
       items: ["Relatório em Folha de Almaço"],
       deadline: "18/08/2026",
+      priority: false,
       expired: true,
     },
   ],
@@ -273,8 +386,10 @@ const subjects_contents = {
         files: ["TCC_Slides_Aula1_SEM15.pdf", "TCC_Roteiro_Aula2_SEM15.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
+
     {
       summary: "Semana 16: Leitura dos slides e roteiro",
       items: [
@@ -293,8 +408,10 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
+
     {
       summary: "Semana 17: Leitura dos slides e roteiro",
       items: ["Documentação", "Quadro Kanban", "Aula 1, 2 e 3: Documento em pdf"],
@@ -307,6 +424,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -315,7 +433,6 @@ const subjects_contents = {
         "Documentação",
         "Quadro Kanban",
         "Aula 1, 2 e 3: Documento em pdf",
-        "Resto a ser instruído",
       ],
       downloads: {
         folder: "/documentos/tcc/sem18/",
@@ -327,6 +444,7 @@ const subjects_contents = {
         ],
       },
       deadline: "23/08/2026 (Domingo)",
+      priority: false,
       expired: true,
     },
   ],
@@ -345,6 +463,7 @@ const subjects_contents = {
         ],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -355,6 +474,7 @@ const subjects_contents = {
         files: ["Frontend_Sem16.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -365,6 +485,7 @@ const subjects_contents = {
         files: ["Frontend_Sem17.docx"],
       },
       deadline: "28/08/2026",
+      priority: false,
       expired: false,
     },
   ],
@@ -377,6 +498,7 @@ const subjects_contents = {
         files: ["Backend_Sem15.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -387,6 +509,7 @@ const subjects_contents = {
         files: ["Backend_Sem16.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -397,6 +520,7 @@ const subjects_contents = {
         files: ["Backend_Sem17.docx"],
       },
       deadline: "28/08/2026",
+      priority: false,
       expired: false,
     },
   ],
@@ -419,6 +543,7 @@ const subjects_contents = {
         files: ["Versionamento_Sem16.docx"],
       },
       deadline: "21/08/2026",
+      priority: false,
       expired: true,
     },
     {
@@ -429,6 +554,7 @@ const subjects_contents = {
         files: ["Versionamento_Sem17.docx"],
       },
       deadline: "28/08/2026",
+      priority: false,
       expired: false,
     },
   ],
@@ -443,6 +569,7 @@ const subjects_contents = {
         "Ciências da Natureza"
       ],
       deadline: "24/08/2026",
+      priority: true,
       expired: false
     }
   ]
@@ -458,14 +585,25 @@ export default function App() {
   const isUserScrolling = useRef(false);
   const scrollTimeout = useRef(null);
 
+  const [targetDisabled, setTargetDisabled] = useState("0");
+
   const JumpToSection = useCallback(
     (subjectID) => {
       const targetElement = subjectRef.current[subjectID];
+      setTargetDisabled(subjectID);
+
       if (targetElement) {
-        isAutoScrolling.current = true;
-        isUserScrolling.current = false;
-        setSelectedSubject(subjectID);
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(
+          ()=>{
+            isAutoScrolling.current = true;
+            isUserScrolling.current = false;
+            setSelectedSubject(subjectID);
+            setTargetDisabled("0");
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start" })
+          },
+          
+          150
+        )
       }
     },
     []
@@ -495,7 +633,7 @@ export default function App() {
         if (!isUserScrolling.current && !isAutoScrolling.current) {
           setSelectedSubject("");
         }
-      }, 750);
+      }, 150);
     };
 
     window.addEventListener("scroll", handleScrollEv);
@@ -518,25 +656,44 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const getSortedItems=(subjectKey)=>{
+  const getSortedItems = (subjectKey) => {
     const items = subjects_contents[subjectKey] || [];
-
-    return [...items].sort((a,b)=>(a.expired?1:0)-(b.expired?1:0));
+  
+    return [...items].sort((a, b) => {
+      if (a.priority !== b.priority) {
+        return a.priority ? -1 : 1;
+      }
+      
+      if (a.expired !== b.expired) {
+        return a.expired ? 1 : -1;
+      }
+  
+      return 0;
+    });
   }
+  
 
   const prioridades = [
-    ["PREPARA SP - SIMULAODS", "HOJE (24/08/2026)"]
+    ["PREPARA SP - SIMULADOS", "HOJE (24/08/2026)"]
   ]
 
   return (
     <>
       <img className="title-img" src={"/titulo.png"} />
-      <p className="description">
-        Atividades recentes serão mostrados aqui com o prazo
+      <h2 className="description">
+        Atividades recentes serão mostrados aqui com o prazo.
+      </h2>
+
+      <p className="description" style={{marginTop: "-20px"}}>
+        Atividades que estão com uma semana faltando para o prazo, serão marcados como PRIORIDADE (card amarelo)
       </p>
 
-      <p style={{ textAlign: "center", fontWeight: "bold" }}>TÉCNICO</p>
-      <div className="jumpto" style={{marginBottom: "30px"}}>
+      <p className="description" style={{marginTop: "-20px"}}>
+        Atividades que estão fora do prazo, serão marcados como EXPIRADO (card vermelho)
+      </p>
+
+      <h2 style={{ textAlign: "center", fontWeight: "bold", color: "#b9f7fa" }}>MATÉRIAS DO TÉCNICO</h2>
+      <div className="jumpto" style={{marginBottom: "40px"}}>
         {[
           "modelagem de banco de dados",
           "programação mobile",
@@ -550,19 +707,35 @@ export default function App() {
             className="jumpto-btn"
             onClick={() => JumpToSection(`0${index}`)}
             key={index}
+            disabled={targetDisabled == `0${index}` ? true : false}
           >
             {item}
           </button>
         ))}
       </div>
 
-      <p style={{ textAlign: "center", fontWeight: "bold" }}>BASE</p>
+      <h2 style={{ textAlign: "center", fontWeight: "bold", color: "#f79494" }}>MATÉRIAS DA BASE</h2>
       <div className="jumpto">
         {["português", "matemática", "história"].map((item, index) => (
           <button
             className="jumpto-btn"
             onClick={() => JumpToSection(`1${index}`)}
             key={index}
+            disabled={targetDisabled == `1${index}` ? true : false}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+
+      <h2 style={{ textAlign: "center", fontWeight: "bold", marginTop: "50px", color: "#99f794" }}>ATIVIDADS DA ESCOLA / SEDUC-SP</h2>
+      <div className="jumpto">
+        {["seducsp"].map((item, index) => (
+          <button
+            className="jumpto-btn"
+            onClick={() => JumpToSection(`2${index}`)}
+            key={index}
+            disabled={targetDisabled == `2${index}` ? true : false}
           >
             {item}
           </button>
@@ -579,7 +752,7 @@ export default function App() {
             <ul className="priority-list">
               {
                 prioridades.map((prioridade, k) => (
-                  <li>
+                  <li key={k}>
                     <p><b>{prioridade[0]}</b></p>
                     <small><p><OctagonAlert className="lricon small" />ATÉ: {prioridade[1]}</p></small>
                   </li>
@@ -618,6 +791,7 @@ export default function App() {
               }}
               downloads={item.downloads}
               isExpired={item.expired}
+              isPriority={item.priority}
               delay={index * 60}
             />
           ))}
@@ -644,6 +818,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               isExpired={item.expired}
               delay={index * 60}
             />
@@ -671,6 +846,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}
@@ -699,6 +875,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}
@@ -727,6 +904,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}
@@ -755,6 +933,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}
@@ -783,6 +962,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}
@@ -803,7 +983,7 @@ export default function App() {
             selectedSubject == "10" ? "subject-selected" : ""
           }`}
         >
-          Português
+          Língua Portuguesa
         </h1>
 
         <section className="section-subject">
@@ -817,6 +997,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               isExpired={item.expired}
               delay={index * 60}
             />
@@ -844,6 +1025,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               isExpired={item.expired}
               delay={index * 60}
             />
@@ -871,6 +1053,8 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
+              links={item.links}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}
@@ -886,10 +1070,10 @@ export default function App() {
       <div className="cards-holder">
           
         <h1
-          ref={(el) => (subjectRef.current["10"] = el)}
+          ref={(el) => (subjectRef.current["20"] = el)}
           style={{ backgroundColor: "rgb(65, 215, 157)" }}
           className={`section-title ${
-            selectedSubject == "10" ? "subject-selected" : ""
+            selectedSubject == "20" ? "subject-selected" : ""
           }`}
         >
           SEDUC-SP
@@ -906,6 +1090,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
               delay={index * 60}

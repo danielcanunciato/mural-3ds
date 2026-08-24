@@ -73,20 +73,33 @@ body {
 .jumpto-btn {
   gap: 20px;
   border: 3px outset rgb(156, 28, 255);
+  filter: drop-shadow(0 4px 0 rgb(78, 14, 127));
   background: black;
   text-transform: uppercase;
   font-weight: bold;
   color: white;
   border-radius: 10px 10px 0 0;
   padding: 12px;
-  transition: .5s ease;
+  transition: .5s ease-out;
+  width: 80%;
+  max-width: 200px;
+  transform: rotateX(20deg);
 }
 
-.jumpto-btn:hover {
+.jumpto-btn:not(:disabled):hover {
   border: 3px inset blue;
+  border-radius: 80px;
   cursor: pointer;
-  filter: drop-shadow(0 0 5px black);
-  transform: scale(1.02);
+  filter: drop-shadow(0 8px 0 darkblue);
+  transform: scale(1.08) rotateX(40deg) translateY(-5px);
+}
+
+.jumpto-btn:not(:disabled):active {
+  border: 3px inset rgb(0, 119, 255);
+  border-radius: 80px;
+  cursor: pointer;
+  filter: drop-shadow(0 -8px 0 rgb(0, 69, 139));
+  transform: scale(1.08) translateY(20px);
 }
 
 .category-title {
@@ -237,6 +250,11 @@ body {
   background: linear-gradient(to left, rgb(95, 15, 15), var(--card-grad));
 }
 
+.priority {
+  filter: drop-shadow(0 0 5px rgb(255, 136, 0));
+  background: linear-gradient(to left, rgba(255, 153, 0, 0.411), var(--card-grad));
+}
+
 .card-title {
   margin-top: 30px;
 }
@@ -266,6 +284,14 @@ body {
   margin-bottom: -30px;
   text-decoration: underline;
   color: rgb(250, 155, 155);
+}
+
+.priority-lesson {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: -30px;
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
 }
 
 .downloads-title {
@@ -317,12 +343,11 @@ body {
 }
 
 .lricon-d {
-  transform: perspective(600px) rotateY(-30deg) rotateX(15deg) skewY(-8deg);
   margin-bottom: 10px;
 }
 
 .lricon-d:has(~.download-btn:hover) {
-  transform: scale(1.2) perspective(600px) rotateY(-30deg) rotateX(15deg) skewY(-8deg);
+  transform: scale(1.1);
   color: cyan;
 }
 
