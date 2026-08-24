@@ -266,6 +266,7 @@ export default function App() {
                 items: item.items,
                 deadline: item.deadline,
               }}
+              downloads={item.downloads}
               isPriority={item.priority}
               isExpired={item.expired}
               delay={index * 60}

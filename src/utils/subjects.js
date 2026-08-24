@@ -222,23 +222,16 @@ const __PROGRAMACAO_MOBILE = [
     },
 
     {
-        summary: "Roteiros (Semana 16) [UMA AULA PELO MENOS]",
+        summary: "Roteiros (Semana 16)",
         items: [
-            "Aula 1 - Perguntas",
-            "Aula 2 - Perguntas"
+            "Aula 3 - Atividade no Teams",
+            "Seguir a partir do Passo 2"
         ],
-        deadline: "21/08/2026",
-        priority: false,
-        expired: true
-    },
-
-    {
-        summary: "Roteiros (Semana 17) [UMA AULA PELO MENOS]",
-        items: [
-            "Aula 1 - Perguntas",
-            "Aula 2 - Perguntas"
-        ],
-        deadline: "30/08/2026 (DOMINGO)",
+        downloads : {
+            folder: "/documentos/mobile/sem16/",
+            files: ["Mobile_Semana16_Aula3.docx"]
+        },
+        deadline: "30/08/2026",
         priority: false,
         expired: false
     },
