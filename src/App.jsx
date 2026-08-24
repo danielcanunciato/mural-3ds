@@ -122,8 +122,8 @@ const subjects_contents = {
       items: [
         "Tarefa 1: Trigonometria no triângulo retângulo",
       ],
-      deadline: "05/08/2026",
-      expired: true,
+      deadline: "31/08/2026",
+      expired: false,
     },
   ],
   historia: [
@@ -149,8 +149,11 @@ const subjects_contents = {
         "Tarefas SP",
       items: [
         "Tarefa 1: Guerra Fria",
+        "Tarefa 2: Nacionalismo e independências na África e Ásia",
+        "Tarefa 3: Revolução na China e em Cuba",
+
       ],
-      deadline: "03/09/2026",
+      deadline: "04/09/2026",
       expired: false,
     },
   ],
@@ -198,14 +201,35 @@ const subjects_contents = {
         ],
       },
       deadline: "23/08/2026 (Domingo)",
-      expired: false,
+      expired: true,
     },
   ],
-  mobile: [],
+  mobile: [
+    {
+      summary: "Roteiros (Semana 15) [UMA AULA PELO MENOS]",
+      items: [
+        "Aula 1 - Perguntas",
+        "Aula 2 - Perguntas"
+      ],
+      deadline: "21/08/2026",
+      expired: false
+    },
+
+    {
+      summary: "Roteiros (Semana 16) [UMA AULA PELO MENOS]",
+      items: [
+        "Aula 1 - Perguntas",
+        "Aula 2 - Perguntas"
+      ],
+      deadline: "21/08/2026",
+      expired: false
+    },
+  ],
+
   ia: [
     {
       summary: "Roteiro (Semana 15)",
-      items: ["Aula 3 - Registro"],
+      items: ["Aula 3 - Roteiro"],
       downloads: {
         folder: "/documentos/ia/sem15/",
         files: ["InteligenciaArtificial_Sem15.docx"],
@@ -215,7 +239,7 @@ const subjects_contents = {
     },
     {
       summary: "Roteiro (Semana 16)",
-      items: ["Aula 3 - Registro"],
+      items: ["Aula 3 - Roteiro"],
       downloads: {
         folder: "/documentos/ia/sem16/",
         files: ["InteligenciaArtificial_Sem16.docx"],
@@ -225,7 +249,7 @@ const subjects_contents = {
     },
     {
       summary: "Roteiro (Semana 17)",
-      items: ["Aula 3 - Registro"],
+      items: ["Aula 3 - Roteiro"],
       downloads: {
         folder: "/documentos/ia/sem17/",
         files: ["InteligenciaArtificial_Sem17.docx"],
@@ -303,7 +327,7 @@ const subjects_contents = {
         ],
       },
       deadline: "23/08/2026 (Domingo)",
-      expired: false,
+      expired: true,
     },
   ],
   frontend: [
@@ -408,6 +432,20 @@ const subjects_contents = {
       expired: false,
     },
   ],
+
+  seducsp: [
+    {
+      summary: "Prepara SP - Simulados",
+      items: [
+        "Linguagens",
+        "Ciências Humanas",
+        "Matemática",
+        "Ciências da Natureza"
+      ],
+      deadline: "24/08/2026",
+      expired: false
+    }
+  ]
 };
 
 export default function App() {
@@ -486,7 +524,9 @@ export default function App() {
     return [...items].sort((a,b)=>(a.expired?1:0)-(b.expired?1:0));
   }
 
-  const prioridades = []
+  const prioridades = [
+    ["PREPARA SP - SIMULAODS", "HOJE (24/08/2026)"]
+  ]
 
   return (
     <>
@@ -838,6 +878,42 @@ export default function App() {
           ))}
         </section>
       </div>
+
+      <div className="divider"></div>
+
+      <h1 className="category-title">OUTRAS ATIVIDADS</h1>
+
+      <div className="cards-holder">
+          
+        <h1
+          ref={(el) => (subjectRef.current["10"] = el)}
+          style={{ backgroundColor: "rgb(65, 215, 157)" }}
+          className={`section-title ${
+            selectedSubject == "10" ? "subject-selected" : ""
+          }`}
+        >
+          SEDUC-SP
+        </h1>
+
+        <section className="section-subject">
+          {getSortedItems("seducsp").map((item, index) => (
+            <Card
+              key={index}
+              teacher={"SEDUC-SP"}
+              subject={""}
+              content={{
+                summary: item.summary,
+                items: item.items,
+                deadline: item.deadline,
+              }}
+              downloads={item.downloads}
+              isExpired={item.expired}
+              delay={index * 60}
+            />
+          ))}
+        </section>
+      </div>
+
 
       {showScrollTop && (
         <button
