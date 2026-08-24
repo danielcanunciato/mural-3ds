@@ -213,7 +213,11 @@ body {
 }
 
 .section-title {
-  width: 100%;
+  width: 90vw;
+  padding: 10px;
+  filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+  border: 4px dotted white;
+  text-transform: uppercase;
   text-align: center;
 }
 

@@ -112,7 +112,7 @@ export default function App() {
   ]
 
   return (
-    <>
+    <main>
       <img className="title-img" src={"/titulo.png"} />
       <h2 className="description">
         Atividades recentes serão mostrados aqui com o prazo.
@@ -542,6 +542,6 @@ export default function App() {
           <ArrowBigUpDash />
         </button>
       )}
-    </>
+    </ main>
   );
 }
