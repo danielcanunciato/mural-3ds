@@ -2,9 +2,22 @@ import "./App.css";
 
 import {
   ArrowBigUpDash,
+  BookOpenText,
+  BrainCog,
+  Database,
+  FolderGit2,
+  HardDrive,
+  LayoutTemplate,
   OctagonAlert,
+  Presentation,
+  Pyramid,
+  Smartphone,
+  SquareRadical,
+  Map,
+  School,
 } from "lucide-react";
-import { useEffect, useRef, useState, memo, useCallback } from "react";
+
+import { useEffect, useRef, useState, useCallback } from "react";
 
 import Card from "./components/Card";
 import { subjects_contents } from "./utils/subjects"
@@ -163,7 +176,7 @@ export default function App() {
         ))}
       </div>
 
-      <h2 style={{ textAlign: "center", fontWeight: "bold", marginTop: "50px", color: "#99f794" }}>ATIVIDADS DA ESCOLA / SEDUC-SP</h2>
+      <h2 style={{ textAlign: "center", fontWeight: "bold", marginTop: "50px", color: "#99f794" }}>ATIVIDADES DA ESCOLA / SEDUC-SP</h2>
       <div className="jumpto">
         {["seducsp"].map((item, index) => (
           <button
@@ -210,7 +223,7 @@ export default function App() {
             selectedSubject == "00" ? "subject-selected" : ""
           }`}
         >
-          Modelagem de Banco de Dados
+          <Database /> Modelagem de Banco de Dados <Database />
         </h1>
 
         <section className="section-subject">
@@ -239,7 +252,7 @@ export default function App() {
             selectedSubject == "01" ? "subject-selected" : ""
           }`}
         >
-          Programação Mobile
+          <Smartphone /> Programação Mobile <Smartphone />
         </h1>
 
         <section className="section-subject">
@@ -267,7 +280,7 @@ export default function App() {
             selectedSubject == "02" ? "subject-selected" : ""
           }`}
         >
-          Inteligência Artificial
+          <BrainCog /> Inteligência Artificial <BrainCog />
         </h1>
 
         <section className="section-subject">
@@ -296,7 +309,7 @@ export default function App() {
             selectedSubject == "03" ? "subject-selected" : ""
           }`}
         >
-          Projeto Multidisciplinar (TCC)
+          <Presentation /> Projeto Multidisciplinar (TCC) <Presentation />
         </h1>
 
         <section className="section-subject">
@@ -325,7 +338,7 @@ export default function App() {
             selectedSubject == "04" ? "subject-selected" : ""
           }`}
         >
-          Programação Front-End
+          <LayoutTemplate /> Programação Front-End <LayoutTemplate />
         </h1>
 
         <section className="section-subject">
@@ -354,7 +367,7 @@ export default function App() {
             selectedSubject == "05" ? "subject-selected" : ""
           }`}
         >
-          Programação Back-End
+          <HardDrive /> Programação Back-End <HardDrive />
         </h1>
 
         <section className="section-subject">
@@ -383,7 +396,7 @@ export default function App() {
             selectedSubject == "06" ? "subject-selected" : ""
           }`}
         >
-          Versionamento de Código
+          <FolderGit2 /> Versionamento de Código <FolderGit2 />
         </h1>
 
         <section className="section-subject">
@@ -418,7 +431,7 @@ export default function App() {
             selectedSubject == "10" ? "subject-selected" : ""
           }`}
         >
-          Língua Portuguesa
+          <BookOpenText /> Língua Portuguesa <BookOpenText />
         </h1>
 
         <section className="section-subject">
@@ -446,7 +459,7 @@ export default function App() {
             selectedSubject == "11" ? "subject-selected" : ""
           }`}
         >
-          Matemática
+          <Pyramid /> Matemática <SquareRadical />
         </h1>
 
         <section className="section-subject">
@@ -474,7 +487,7 @@ export default function App() {
             selectedSubject == "12" ? "subject-selected" : ""
           }`}
         >
-          História
+          <Map /> História <Map />
         </h1>
 
         <section className="section-subject">
@@ -511,7 +524,7 @@ export default function App() {
             selectedSubject == "20" ? "subject-selected" : ""
           }`}
         >
-          SEDUC-SP
+          <School /> SEDUC-SP <School />
         </h1>
 
         <section className="section-subject">
