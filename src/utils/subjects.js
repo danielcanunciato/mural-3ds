@@ -189,9 +189,23 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             "Modelagem_Sem17_Aula4.docx",
             ],
         },
-        deadline: "23/08/2026 (Domingo)",
+        deadline: "23/08/2026 (DOMINGO)",
         priority: false,
         expired: true,
+    },
+
+    {
+        summary: "Registros Semana 18",
+        items: ["Aula 2 - Roteiro"],
+        downloads: {
+            folder: "/documentos/modelagem/sem18/",
+            files: [
+            "Modelagem_Sem18_Aula2.docx",
+            ],
+        },
+        deadline: "30/08/2026 (DOMINGO)",
+        priority: false,
+        expired: false,
     },
 ]
 
@@ -204,7 +218,7 @@ const __PROGRAMACAO_MOBILE = [
         ],
         deadline: "21/08/2026",
         priority: false,
-        expired: false
+        expired: true
     },
 
     {
@@ -214,6 +228,17 @@ const __PROGRAMACAO_MOBILE = [
             "Aula 2 - Perguntas"
         ],
         deadline: "21/08/2026",
+        priority: false,
+        expired: true
+    },
+
+    {
+        summary: "Roteiros (Semana 17) [UMA AULA PELO MENOS]",
+        items: [
+            "Aula 1 - Perguntas",
+            "Aula 2 - Perguntas"
+        ],
+        deadline: "30/08/2026 (DOMINGO)",
         priority: false,
         expired: false
     },
@@ -333,7 +358,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
             "TCC_MaterialDeApoio_SEM18.xlsx",
             ],
         },
-        deadline: "23/08/2026 (Domingo)",
+        deadline: "23/08/2026 (DOMINGO)",
         priority: false,
         expired: true,
     },

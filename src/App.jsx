@@ -27,10 +27,11 @@ export default function App() {
       setTargetDisabled(subjectID);
 
       if (targetElement) {
+        isAutoScrolling.current = true;
+        isUserScrolling.current = false;
+
         setTimeout(
-          ()=>{
-            isAutoScrolling.current = true;
-            isUserScrolling.current = false;
+          ()=>{    
             setSelectedSubject(subjectID);
             setTargetDisabled("0");
             targetElement.scrollIntoView({ behavior: "smooth", block: "start" })
