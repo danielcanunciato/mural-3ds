@@ -21,8 +21,15 @@ const __PORTUGUES = [
       },
   
       {
-        summary: "Apostila",
-        items: ["Até a Aula 6"],
+        summary: "Apostila (* = NOVO)",
+        items: [
+            "Aula 1",
+            "Aula 2",
+            "Aula 3",
+            "Aula 4",
+            "Aula 5",
+            "*Aula 6"
+        ],
         deadline: "30/09/2026",
         priority: false,
         expired: false,
@@ -58,24 +65,34 @@ const __PORTUGUES = [
         priority: false,
         expired: false,
       },
-  
+      
       {
-        summary: "Seminário - A terceira geração modernista. Trabalho em grupo com os grupos do TCC",
-        items: [
-          "Apresentação visual DEVE ser feito pelo Canva",
-          "Divisão do conteúdo DEVE ser equilibrada.",
-          "Cada grupo tem de 15 a 20 minutos de apresentação.",
-          "",
-          "GRUPO 1: João Cabral de Melo Neto",
-          "GRUPO 2: Guimarães Rosa",
-          "GRUPO 3: Clarice Lispector",
-        ],
-        deadline: "08/09/2026",
-        priority: false,
-        expired: false,
-      },
-]
-
+          summary: "Seminário - A terceira geração modernista. Trabalho em grupo com os grupos do TCC",
+          items: [
+              "Apresentação visual DEVE ser feito pelo Canva",
+              "Divisão do conteúdo DEVE ser equilibrada.",
+              "Cada grupo tem de 15 a 20 minutos de apresentação.",
+              "",
+              "GRUPO 1: João Cabral de Melo Neto",
+              "GRUPO 2: Guimarães Rosa",
+              "GRUPO 3: Clarice Lispector",
+            ],
+            deadline: "08/09/2026",
+            priority: false,
+            expired: false,
+        },
+    
+        {
+            summary: "Leia SP",
+            items: [
+                "OLHOS D'ÁGUA de Conceição Evaristo",
+            ],
+            deadline: "31/09/2026",
+            priority: false,
+            expired: false,
+        },
+    ]
+    
 const __MATEMATICA = [
     {
         summary: "Tarefas",
