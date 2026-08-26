@@ -77,7 +77,7 @@ const Card = memo(function Card({
         {content.items.map((value, index) => (
           <li className="card-item" key={index}>
             {value === "" ? (
-              <p style={{ marginBottom: '0' }}>{"<=============>"}</p>
+              <p style={{ marginBottom: '0' }}>{`<${"=".repeat(30)}>`}</p>
             ) : (
               <><BookText className="lricon small" /> {value}</>
             )}
