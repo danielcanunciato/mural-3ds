@@ -17,10 +17,19 @@
 }
 
 h1,h2,h3,h4 {
+  -webkit-text-stroke: 5px rgba(0, 0, 0, 0.25);
+  paint-order: stroke fill;
   color: var(--title-color);
 }
 p {
   color: var(--info-color);
+}
+svg {
+  filter: drop-shadow(0 0 2px black);
+}
+.item-stroke {
+  -webkit-text-stroke: 5px rgba(0, 0, 0, 0.25);
+  paint-order: stroke fill;
 }
 
 body {
@@ -272,6 +281,7 @@ body {
   border: none;
   transform: scale(1) translate(-16px, -16px);
   border-radius: 60px;
+  filter: none;
 
   width: 50px;
   height: 50px;

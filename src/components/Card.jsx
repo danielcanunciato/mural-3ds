@@ -55,7 +55,7 @@
               <li className="card-item" key={i}>
                 <div className="download-div">
                   <Download className="lricon-d" />
-                  <DownloadButton item_name={item} item_path={downloads.folder} />
+                  <DownloadButton item_name={item} item_path  ={downloads.folder} />
                 </div>
               </li>
             ))}
@@ -101,20 +101,21 @@
 
     return (
       <div
-        className={`card ${isExpired ? "expired" : ""} ${isPriority ? "priority" : ""} ${big ? (shown ? "card--show" : "") : ""} card--enter`}
+        className={`card item-stroke ${isExpired ? "expired" : ""} ${isPriority ? "priority" : ""} ${big ? (shown ? "card--show" : "") : ""} card--enter`}
         style={{ animationDelay: `${delay}ms` }}
       >
-        {isExpired && <p className="expired-lesson">EXPIRADO</p>}
-        {isPriority && <p className="priority-lesson">PRIORIDADE</p>}
-        
+
         { big &&
-          <button className="show-btn" onClick={handleShowItems}>
+          <button className="show-btn no-stroke" onClick={handleShowItems}>
             {
               shown ? (<Eye className="lricon" />) : (<EyeOff className="lricon" />)
             }
           </button>
         }
 
+        {isExpired && <p className="expired-lesson">EXPIRADO</p>}
+        {isPriority && <p className="priority-lesson">PRIORIDADE</p>}
+        
         <h2 className="card-title">
           <MessageSquareQuote id="title-icon" className="lricon" /> {teacher}
         </h2>

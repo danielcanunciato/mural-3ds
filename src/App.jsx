@@ -147,15 +147,15 @@ export default function App() {
       </h2>
 
       <p className="description" style={{marginTop: "-20px"}}>
-        Atividades que estão com uma semana faltando para o prazo, serão marcados como PRIORIDADE (card amarelo)
+        Atividades que estão de <span style={{fontWeight: "bold", textDecoration: "underline"}}>2 à 4 dias</span> para o prazo, serão marcados como <span style={{color: "gold", fontWeight: "bold"}}>PRIORIDADE</span> (card amarelo)
       </p>
 
       <p className="description" style={{marginTop: "-20px"}}>
-        Atividades que estão fora do prazo, serão marcados como EXPIRADO (card vermelho)
+        Atividades que estão fora do prazo, serão marcados como <span style={{color: "red", fontWeight: "bold"}}>EXPIRADO</span> (card vermelho)
       </p>
 
-      <p className="description" style={{marginTop: "-20px"}}>
-      Cards de atividades com muita informação tem um botão de <b>Olho <Eye className="lricon" style={{transform: "translateY(6px)"}} /></b> para expandir e mostrar mais informações
+      <p className="description" style={{marginTop: "-30px"}}>
+        Cards de atividades com muita informação tem um botão de <span style={{color: "cyan"}}><b>Olho <Eye className="lricon" style={{color: "cyan", transform: "translateY(6px)"}} /></b></span> para expandir e mostrar mais informações
       </p>
 
       <h2 style={{ textAlign: "center", fontWeight: "bold", color: "#b9f7fa" }}>MATÉRIAS DO TÉCNICO</h2>
@@ -182,7 +182,7 @@ export default function App() {
 
       <h2 style={{ textAlign: "center", fontWeight: "bold", color: "#f79494" }}>MATÉRIAS DA BASE</h2>
       <div className="jumpto">
-        {["português", "matemática", "história"].map((item, index) => (
+        {["língua portuguesa", "matemática", "história"].map((item, index) => (
           <button
             className="jumpto-btn"
             onClick={() => JumpToSection(`1${index}`)}
@@ -213,7 +213,7 @@ export default function App() {
         
           <div className="divider"></div>
 
-          <div className="priority-holder">
+          <div className="priority-holder item-stroke">
             <h1 className="priority-title">ATIVIDADES EM PRIORIDADES</h1>
             <ul className="priority-list">
               {
@@ -549,7 +549,7 @@ export default function App() {
 
       <div className="divider"></div>
 
-      <h1 className="category-title">OUTRAS ATIVIDADS</h1>
+      <h1 className="category-title">OUTRAS ATIVIDADES</h1>
 
       <div className="cards-holder">
           

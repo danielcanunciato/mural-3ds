@@ -201,7 +201,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
     },
 
     {
-        summary: "Registros Semana 16 (Em Grupo)",
+        summary: "[PRAZO EXTENDIDO] Registros Semana 16 (Em Grupo)",
         items: ["Aula 1 - Roteiro", "Aula 2 - Slide (20 e 21)", "Aula 3 - Roteiro", "Aula 4 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem16/",
@@ -212,9 +212,9 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             "Modelagem_Sem16_Aula4.docx",
             ],
         },
-        deadline: "21/08/2026",
-        priority: false,
-        expired: true,
+        deadline: "26/08/2026 (HOJE)",
+        priority: true,
+        expired: false,
         big: true,
     },
 
@@ -230,9 +230,9 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             "Modelagem_Sem17_Aula4.docx",
             ],
         },
-        deadline: "23/08/2026 (DOMINGO)",
+        deadline: "30/08/2026 (DOMINGO)",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -246,7 +246,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             ],
         },
         deadline: "30/08/2026 (DOMINGO)",
-        priority: true,
+        priority: false,
         expired: false,
         big: false,
     },
