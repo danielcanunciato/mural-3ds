@@ -183,7 +183,7 @@ const __HISTORIA = [
 // KASSIO EUGENIO 
 const __MODELAGEM_DE_BANCO_DE_DADOS = [
     {
-        summary: "Registros Semana 15 (Em Grupo)",
+        summary: "Registros Semana 15 (Em Grupo). Pelo menos uma aula.",
         items: ["Aula 1 - Roteiro", "Aula 2 - Roteiro", "Aula 3 - Slide (10 e 11)", "Aula 4 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem15/",
@@ -201,7 +201,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
     },
 
     {
-        summary: "[PRAZO EXTENDIDO] Registros Semana 16 (Em Grupo)",
+        summary: "[PRAZO EXTENDIDO] Registros Semana 16 (Em Grupo). Pelo menos uma aula.",
         items: ["Aula 1 - Roteiro", "Aula 2 - Slide (20 e 21)", "Aula 3 - Roteiro", "Aula 4 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem16/",
@@ -219,7 +219,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
     },
 
     {
-        summary: "Registros Semana 17",
+        summary: "Registros Semana 17. Pelo menos uma aula.",
         items: ["Aula 1 - Slide (20 e 21)", "Aula 2 - Slide (20 e 21)", "Aula 3 - Roteiro", "Aula 4 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem17/",
@@ -237,7 +237,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
     },
 
     {
-        summary: "Registros Semana 18",
+        summary: "Registros Semana 18. Pelo menos uma aula.",
         items: ["Aula 2 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem18/",
