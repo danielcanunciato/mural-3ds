@@ -18,6 +18,7 @@ const __PORTUGUES = [
         deadline: "24/08/2026",
         priority: false,
         expired: true,
+        big: false,
       },
   
       {
@@ -33,6 +34,7 @@ const __PORTUGUES = [
         deadline: "30/09/2026",
         priority: false,
         expired: false,
+        big: false,
       },
   
       {
@@ -44,6 +46,7 @@ const __PORTUGUES = [
         deadline: "T1: 12/08/2026 // T2: 18/08/2026",
         priority: false,
         expired: true,
+        big: false,
       },
   
       {
@@ -54,6 +57,7 @@ const __PORTUGUES = [
         deadline: "24/09/2026",
         priority: false,
         expired: false,
+        big: false,
       },
   
       {
@@ -64,6 +68,7 @@ const __PORTUGUES = [
         deadline: "28/09/2026",
         priority: false,
         expired: false,
+        big: false,
       },
       
       {
@@ -80,6 +85,7 @@ const __PORTUGUES = [
             deadline: "08/09/2026",
             priority: false,
             expired: false,
+            big: true,
         },
     
         {
@@ -90,6 +96,7 @@ const __PORTUGUES = [
             deadline: "31/09/2026",
             priority: false,
             expired: false,
+            big: false,
         },
     ]
     
@@ -102,6 +109,7 @@ const __MATEMATICA = [
         deadline: "31/08/2026",
         priority: true,
         expired: false,
+        big: false,
     },
 
     {
@@ -112,55 +120,59 @@ const __MATEMATICA = [
         deadline: "11/09/2026",
         priority: false,
         expired: false,
+        big: false,
     },
 ]
 
 const __HISTORIA = [
     {
-    summary:
-        "Seminário de História: Criar uma linha do tempo em cartaz feito com papel Kraft",
-    items: [
-        "EM GRUPO: Grupos do TCC",
-        "[28/08] Grupo 1: Guerra Cubana",
-        "[28/08] Grupo 2: Revolução Chinesa",
-        "[04/09] Grupo 3: Crise e Desagregação da URSS",
-    ],
-    downloads: {
-        folder: "/documentos/historia/seminario/",
-        files: ["Historia_Seminario_01.jpeg", "Historia_Seminario_02.jpeg"],
-    },
-    deadline: "28/08/2026 - 04/09/2026",
-    priority: true,
-    expired: false,
-    },
-
-    {
-    summary:
-        "Tarefas SP",
-    items: [
-        "Tarefa 1: Guerra Fria",
-        "Tarefa 2: Nacionalismo e independências na África e Ásia",
-        "Tarefa 3: Revolução na China e em Cuba",
-
-    ],
-    deadline: "04/09/2026",
-    priority: false,
-    expired: false,
+        summary:
+            "Seminário de História: Criar uma linha do tempo em cartaz feito com papel Kraft",
+        items: [
+            "EM GRUPO: Grupos do TCC",
+            "[28/08] Grupo 1: Guerra Cubana",
+            "[28/08] Grupo 2: Revolução Chinesa",
+            "[04/09] Grupo 3: Crise e Desagregação da URSS",
+        ],
+        downloads: {
+            folder: "/documentos/historia/seminario/",
+            files: ["Historia_Seminario_01.jpeg", "Historia_Seminario_02.jpeg"],
+        },
+        deadline: "28/08/2026 - 04/09/2026",
+        priority: true,
+        expired: false,
+        big: true,
     },
 
     {
-    summary:
-        "Prepara SP - Logue na Sala do Futuro e depois clique no link",
-    items: [
-        "História -- Unidade 8: Era Vargas e Guerra-Fria"
-    ],
-    links: [
-        ["Cursos: História", "https://preparasp.jovensgenios.com/cursos/019c07ee-5114-720c-aa0a-8816c7c33a20"]
+        summary:
+            "Tarefas SP",
+        items: [
+            "Tarefa 1: Guerra Fria",
+            "Tarefa 2: Nacionalismo e independências na África e Ásia",
+            "Tarefa 3: Revolução na China e em Cuba",
 
-    ],
-    deadline: "04/09/2026",
-    priority: false,
-    expired: false,
+        ],
+        deadline: "04/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
+
+    {
+        summary:
+            "Prepara SP - Logue na Sala do Futuro e depois clique no link",
+        items: [
+            "História -- Unidade 8: Era Vargas e Guerra-Fria"
+        ],
+        links: [
+            ["Cursos: História", "https://preparasp.jovensgenios.com/cursos/019c07ee-5114-720c-aa0a-8816c7c33a20"]
+
+        ],
+        deadline: "04/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
     },
 ]
 
@@ -168,7 +180,7 @@ const __HISTORIA = [
 
 // MATERIAS DO TECNICO \\
 
-// KASSIO EUGENIO
+// KASSIO EUGENIO 
 const __MODELAGEM_DE_BANCO_DE_DADOS = [
     {
         summary: "Registros Semana 15 (Em Grupo)",
@@ -185,6 +197,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -202,6 +215,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -219,6 +233,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
         deadline: "23/08/2026 (DOMINGO)",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -233,6 +248,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
         deadline: "30/08/2026 (DOMINGO)",
         priority: true,
         expired: false,
+        big: false,
     },
 ]
 
@@ -245,7 +261,8 @@ const __PROGRAMACAO_MOBILE = [
         ],
         deadline: "21/08/2026",
         priority: false,
-        expired: true
+        expired: true,
+        big: false,
     },
 
     {
@@ -260,7 +277,8 @@ const __PROGRAMACAO_MOBILE = [
         },
         deadline: "30/08/2026",
         priority: true,
-        expired: false
+        expired: false,
+        big: false,
     },
 ]
 
@@ -276,6 +294,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -288,6 +307,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -296,6 +316,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         deadline: "18/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -308,6 +329,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         deadline: "30/08/2026 (DOMINGO)",
         priority: true,
         expired: false,
+        big: false,
     },
 
 ]
@@ -323,6 +345,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -345,6 +368,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -361,6 +385,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -382,6 +407,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         deadline: "23/08/2026 (DOMINGO)",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -402,6 +428,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         deadline: "30/08/2026 (DOMINGO)",
         priority: true,
         expired: false,
+        big: true,
     },
 ]
 
@@ -423,6 +450,7 @@ const __PROGRAMACAO_FRONTEND = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: true,
     },
 
     {
@@ -435,6 +463,7 @@ const __PROGRAMACAO_FRONTEND = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -447,6 +476,7 @@ const __PROGRAMACAO_FRONTEND = [
         deadline: "28/08/2026",
         priority: true,
         expired: false,
+        big: false,
     },
 ]
 
@@ -461,6 +491,7 @@ const __PROGRAMACAO_BACKEND = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -473,6 +504,7 @@ const __PROGRAMACAO_BACKEND = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -485,6 +517,7 @@ const __PROGRAMACAO_BACKEND = [
         deadline: "28/08/2026",
         priority: true,
         expired: false,
+        big: false,
     },
 ]
 
@@ -499,6 +532,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -511,6 +545,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
         deadline: "21/08/2026",
         priority: false,
         expired: true,
+        big: false,
     },
 
     {
@@ -523,6 +558,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
         deadline: "28/08/2026",
         priority: true,
         expired: false,
+        big: false,
     },
 
     {
@@ -535,6 +571,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
         deadline: "28/08/2026",
         priority: true,
         expired: false,
+        big: false,
     },
 ]
 
@@ -552,7 +589,8 @@ const __SEDUC_SP = [
         ],
         deadline: "24/08/2026",
         priority: false,
-        expired: true
+        expired: true,
+        big: false,
     }
 ]
 

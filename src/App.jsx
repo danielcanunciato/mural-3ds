@@ -15,6 +15,7 @@ import {
   SquareRadical,
   Map,
   School,
+  Eye,
 } from "lucide-react";
 
 import { useEffect, useRef, useState, useCallback } from "react";
@@ -153,6 +154,10 @@ export default function App() {
         Atividades que estão fora do prazo, serão marcados como EXPIRADO (card vermelho)
       </p>
 
+      <p className="description" style={{marginTop: "-20px"}}>
+      Cards de atividades com muita informação tem um botão de <b>Olho <Eye className="lricon" style={{transform: "translateY(6px)"}} /></b> para expandir e mostrar mais informações
+      </p>
+
       <h2 style={{ textAlign: "center", fontWeight: "bold", color: "#b9f7fa" }}>MATÉRIAS DO TÉCNICO</h2>
       <div className="jumpto" style={{marginBottom: "40px"}}>
         {[
@@ -260,6 +265,7 @@ export default function App() {
               downloads={item.downloads}
               isExpired={item.expired}
               isPriority={item.priority}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -289,6 +295,7 @@ export default function App() {
               downloads={item.downloads}
               isPriority={item.priority}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -318,6 +325,7 @@ export default function App() {
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -347,6 +355,7 @@ export default function App() {
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -376,6 +385,7 @@ export default function App() {
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -405,6 +415,7 @@ export default function App() {
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -434,6 +445,7 @@ export default function App() {
               downloads={item.downloads}
               isPriority={item.priority}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -468,6 +480,7 @@ export default function App() {
               }}
               isPriority={item.priority}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -496,6 +509,7 @@ export default function App() {
               }}
               isPriority={item.priority}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -526,6 +540,7 @@ export default function App() {
               links={item.links}
               downloads={item.downloads}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
@@ -562,6 +577,7 @@ export default function App() {
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              big={item.big}
               delay={index * 60}
             />
           ))}
