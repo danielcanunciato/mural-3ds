@@ -60,7 +60,7 @@ const __PORTUGUES = [
       },
   
       {
-        summary: "Seminário - A terceira geração modernista | Trabalho em grupo com os grupos do TCC",
+        summary: "Seminário - A terceira geração modernista. Trabalho em grupo com os grupos do TCC",
         items: [
           "Apresentação visual DEVE ser feito pelo Canva",
           "Divisão do conteúdo DEVE ser equilibrada.",
@@ -83,6 +83,16 @@ const __MATEMATICA = [
             "Tarefa 1: Trigonometria no triângulo retângulo",
         ],
         deadline: "31/08/2026",
+        priority: true,
+        expired: false,
+    },
+
+    {
+        summary: "Tarefas",
+        items: [
+            "Tarefa 2: Razões trigonométricas",
+        ],
+        deadline: "11/09/2026",
         priority: false,
         expired: false,
     },
@@ -103,7 +113,7 @@ const __HISTORIA = [
         files: ["Historia_Seminario_01.jpeg", "Historia_Seminario_02.jpeg"],
     },
     deadline: "28/08/2026 - 04/09/2026",
-    priority: false,
+    priority: true,
     expired: false,
     },
 
@@ -204,7 +214,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             ],
         },
         deadline: "30/08/2026 (DOMINGO)",
-        priority: false,
+        priority: true,
         expired: false,
     },
 ]
@@ -232,7 +242,7 @@ const __PROGRAMACAO_MOBILE = [
             files: ["Mobile_Semana16_Aula3.docx"]
         },
         deadline: "30/08/2026",
-        priority: false,
+        priority: true,
         expired: false
     },
 ]
@@ -264,24 +274,25 @@ const __INTELIGENCIA_ARTIFICIAL = [
     },
 
     {
-        summary: "Roteiro (Semana 17)",
-        items: ["Aula 3 - Roteiro"],
-        downloads: {
-            folder: "/documentos/ia/sem17/",
-            files: ["InteligenciaArtificial_Sem17.docx"],
-        },
-        deadline: "23/08/2026",
-        priority: false,
-        expired: false,
-    },
-
-    {
         summary: 'Relatório "Mulheres Mil"',
         items: ["Relatório em Folha de Almaço"],
         deadline: "18/08/2026",
         priority: false,
         expired: true,
     },
+
+    {
+        summary: "Roteiro (Semana 17)",
+        items: ["Aula 3 - Roteiro"],
+        downloads: {
+            folder: "/documentos/ia/sem17/",
+            files: ["InteligenciaArtificial_Sem17.docx"],
+        },
+        deadline: "30/08/2026 (DOMINGO)",
+        priority: true,
+        expired: false,
+    },
+
 ]
 
 const __PROJETO_MULTIDISCIPLINAR_TCC = [
@@ -355,6 +366,26 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         priority: false,
         expired: true,
     },
+
+    {
+        summary: "Semana 19: Leitura dos slides e roteiro",
+        items: [
+            "Documentação",
+            "Quadro Kanban",
+            "Aula 1, 2 e 3: Documento em pdf",
+        ],
+        downloads: {
+            folder: "/documentos/tcc/sem19/",
+            files: [
+            "TCC_Roteiro_Aula1_SEM19.docx",
+            "TCC_Roteiro_Aula2_SEM19.docx",
+            "TCC_Roteiro_Aula3_SEM19.docx",
+            ],
+        },
+        deadline: "30/08/2026 (DOMINGO)",
+        priority: true,
+        expired: false,
+    },
 ]
 
 // JOÃO YOKADA
@@ -397,7 +428,7 @@ const __PROGRAMACAO_FRONTEND = [
             files: ["Frontend_Sem17.docx"],
         },
         deadline: "28/08/2026",
-        priority: false,
+        priority: true,
         expired: false,
     },
 ]
@@ -435,7 +466,7 @@ const __PROGRAMACAO_BACKEND = [
             files: ["Backend_Sem17.docx"],
         },
         deadline: "28/08/2026",
-        priority: false,
+        priority: true,
         expired: false,
     },
 ]
@@ -473,7 +504,19 @@ const __VERSIONAMENTO_DE_CODIGO = [
             files: ["Versionamento_Sem17.docx"],
         },
         deadline: "28/08/2026",
-        priority: false,
+        priority: true,
+        expired: false,
+    },
+
+    {
+        summary: "Registro (Semana 18)",
+        items: ["Semana 18: Aula 3"],
+        downloads: {
+            folder: "/documentos/versionamento/sem18/",
+            files: ["Versionamento_Sem18.docx"],
+        },
+        deadline: "28/08/2026",
+        priority: true,
         expired: false,
     },
 ]
@@ -491,8 +534,8 @@ const __SEDUC_SP = [
             "Ciências da Natureza"
         ],
         deadline: "24/08/2026",
-        priority: true,
-        expired: false
+        priority: false,
+        expired: true
     }
 ]
 

@@ -105,25 +105,38 @@ export default function App() {
   }, []);
 
   const getSortedItems = (subjectKey) => {
-    const items = subjects_contents[subjectKey] || [];
+    const items = subjects_contents[subjectKey] ? [...subjects_contents[subjectKey]].reverse() : [];
   
     return [...items].sort((a, b) => {
       if (a.priority !== b.priority) {
         return a.priority ? -1 : 1;
       }
       
-      if (a.expired !== b.expired) {
+      if (b.expired !== a.expired) {
         return a.expired ? 1 : -1;
       }
   
       return 0;
     });
   }
-  
 
-  const prioridades = [
-    ["PREPARA SP - SIMULADOS", "HOJE (24/08/2026)"]
-  ]
+  const getSortedPriority = () => {
+    const priorityItems = [];
+  
+    Object.keys(subjects_contents).forEach((subjectKey) => {
+      const items = subjects_contents[subjectKey] || [];
+
+      const filtered = items.filter(item => item.priority === true);
+  
+      filtered.forEach(item => {
+        priorityItems.push([subjectKey, item.summary, item.deadline]);
+      });
+    });
+  
+    return priorityItems;
+  };  
+
+  const prioridades = getSortedPriority();
 
   return (
     <main>
@@ -201,8 +214,15 @@ export default function App() {
               {
                 prioridades.map((prioridade, k) => (
                   <li key={k}>
-                    <p><b>{prioridade[0]}</b></p>
-                    <small><p><OctagonAlert className="lricon small" />ATÉ: {prioridade[1]}</p></small>
+                    <p>
+
+                      <span style={{textTransform: "uppercase", fontWeight: "bold"}}>{prioridade[0]}</span>: {prioridade[1]}
+
+                    </p>
+
+                    <small><p style={{textDecoration: "underline"}}>
+                        <OctagonAlert className="lricon small" style={{color: "red"}} />ATÉ: {prioridade[2]}
+                    </p></small>
                   </li>
                 ))
               }
