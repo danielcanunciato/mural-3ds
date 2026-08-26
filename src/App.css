@@ -465,6 +465,15 @@ body {
 
   .show-btn {
     opacity: 0.75;
+    
+    width: 70px;
+    height: 70px;
+
     transform: scale(1) translate(-30px, -40px);
+  }
+
+  .show-btn:hover {
+    opacity: 1;
+    transform: scale(1) translate(-26px, -36px);
   }
 }

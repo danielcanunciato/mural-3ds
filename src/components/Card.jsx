@@ -49,7 +49,7 @@
     return (
       <>     
         {downloads && Object.keys(downloads)?.length > 0 && (
-          <ul className="card-list" style={{ marginTop: "10px" }}>
+          <ul className="card-list" style={{ marginTop: "-30px" }}>
             <p className="downloads-title">Downloads</p>
             {downloads.files.map((item, i) => (
               <li className="card-item" key={i}>
@@ -63,7 +63,7 @@
         )}
 
         {links && Object.keys(links)?.length > 0 && (
-          <ul className="card-list" style={{ marginTop: "-20px" }}>
+          <ul className="card-list" style={{ marginTop: "-30px" }}>
             <p className="downloads-title">Links</p>
             {links.map((item, i) => (
               <li className="card-item" key={i}>

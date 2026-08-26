@@ -269,16 +269,21 @@ const __PROGRAMACAO_MOBILE = [
         summary: "Roteiros (Semana 16)",
         items: [
             "Aula 3 - Atividade no Teams",
-            "Seguir a partir do Passo 2"
+            "Aula 4 - Atividade no Teams"
         ],
         downloads : {
             folder: "/documentos/mobile/sem16/",
-            files: ["Mobile_Semana16_Aula3.docx"]
+            files: [
+                "Mobile_Semana16_Aula3.docx",
+                "Mobile_Semana16_Aula4.pdf",
+                "AULA4-index.html",
+                "AULA4-estilo.css"
+            ]
         },
         deadline: "30/08/2026",
         priority: true,
         expired: false,
-        big: false,
+        big: true,
     },
 ]
 
