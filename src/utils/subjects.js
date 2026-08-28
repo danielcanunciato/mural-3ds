@@ -193,7 +193,7 @@ const __HISTORIA = [
 // KASSIO EUGENIO 
 const __MODELAGEM_DE_BANCO_DE_DADOS = [
     {
-        summary: "Registros Semana 15 (Em Grupo). Pelo menos uma aula.",
+        summary: "Registros Semana 15 (EM GRUPO). Pelo menos uma aula.",
         items: ["Aula 1 - Roteiro", "Aula 2 - Roteiro", "Aula 3 - Slide (10 e 11)", "Aula 4 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem15/",
