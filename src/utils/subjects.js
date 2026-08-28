@@ -3,7 +3,7 @@ const __PORTUGUES = [
     {
         summary: "Entrega da Redação 01 (Tarefas)",
         items: [
-        "Tema: Combate ao racismo no mercado de trabalho: responsabilidade estatal ou das empresas?"
+            "Tema: Combate ao racismo no mercado de trabalho: responsabilidade estatal ou das empresas?"
         ],
         deadline: "21/08/2026",
         priority: false,
