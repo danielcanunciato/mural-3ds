@@ -108,18 +108,44 @@ export default function App() {
   const getSortedItems = (subjectKey) => {
     const items = subjects_contents[subjectKey] ? [...subjects_contents[subjectKey]].reverse() : [];
   
-    return [...items].sort((a, b) => {
-      if (a.priority !== b.priority) {
-        return a.priority ? -1 : 1;
-      }
+    // Função auxiliar para converter "DD/MM/YYYY" para um timestamp numérico válido
+    const parseDateBR = (dateStr) => {
+      if (!dateStr) return 0;
+      const parts = dateStr.split('/');
+      if (parts.length !== 3) return 0;
       
-      if (b.expired !== a.expired) {
-        return a.expired ? 1 : -1;
+      // Transforma "DD/MM/YYYY" em "YYYY-MM-DD" para o JavaScript entender
+      const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+      const timestamp = new Date(formattedDate).getTime();
+      
+      return isNaN(timestamp) ? 0 : timestamp;
+    };
+  
+    return [...items].sort((a, b) => {
+      // 1. Mantém os blocos separados: Priority (1) > Normal (2) > Expired (3)
+      const getStatusWeight = (item) => {
+        if (item.expired) return 3;
+        if (item.priority) return 1;
+        return 2;
+      };
+  
+      const weightA = getStatusWeight(a);
+      const weightB = getStatusWeight(b);
+  
+      if (weightA !== weightB) {
+        return weightA - weightB;
       }
   
-      return 0;
+      // 2. Se estiverem no mesmo bloco, ordena por data (Menores/Antigas no topo)
+      const timeA = parseDateBR(a.deadline);
+      const timeB = parseDateBR(b.deadline);
+  
+      return timeA - timeB; 
     });
   }
+  
+  
+  
 
   const getSortedPriority = () => {
     const priorityItems = [];
