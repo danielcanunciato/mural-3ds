@@ -137,11 +137,11 @@ const __MATEMATICA = [
 const __HISTORIA = [
     {
         summary:
-            "Seminário de História: Criar uma linha do tempo em cartaz feito com papel Kraft",
+            "Seminário de História: Criar uma linha do tempo em cartaz feito com papel Kraft. Datas dos grupos 1 e 2 foram extendidas para a semana posterior.",
         items: [
             "EM GRUPO: Grupos do TCC",
-            "[28/08] Grupo 1: Guerra Cubana",
-            "[28/08] Grupo 2: Revolução Chinesa",
+            "[03/09] Grupo 1: Guerra Cubana",
+            "[03/09] Grupo 2: Revolução Chinesa",
             "[04/09] Grupo 3: Crise e Desagregação da URSS",
         ],
         downloads: {
