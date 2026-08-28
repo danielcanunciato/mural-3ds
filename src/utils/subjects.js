@@ -348,6 +348,19 @@ const __INTELIGENCIA_ARTIFICIAL = [
         big: false,
     },
 
+    {
+        summary: "Roteiro (Semana 18)",
+        items: ["Aula 3 - Roteiro"],
+        downloads: {
+            folder: "/documentos/ia/sem18/",
+            files: ["InteligenciaArtificial_Sem18.docx"],
+        },
+        deadline: "30/08/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
+
 ]
 
 const __PROJETO_MULTIDISCIPLINAR_TCC = [
