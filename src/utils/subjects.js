@@ -41,9 +41,19 @@ const __PORTUGUES = [
         summary: "Tarefas",
         items: [
           "Tarefa 1: Variação e Norma",
+        ],
+        deadline: "12/08/2026",
+        priority: false,
+        expired: true,
+        big: false,
+      },
+  
+      {
+        summary: "Tarefas",
+        items: [
           "Tarefa 2: Texto dissertativo-argumentativo",
         ],
-        deadline: "T1: 12/08/2026 // T2: 18/08/2026",
+        deadline: "18/08/2026",
         priority: false,
         expired: true,
         big: false,
@@ -107,7 +117,7 @@ const __MATEMATICA = [
             "Tarefa 1: Trigonometria no triângulo retângulo",
         ],
         deadline: "31/08/2026",
-        priority: true,
+        priority: false,
         expired: false,
         big: false,
     },
@@ -138,8 +148,8 @@ const __HISTORIA = [
             folder: "/documentos/historia/seminario/",
             files: ["Historia_Seminario_01.jpeg", "Historia_Seminario_02.jpeg"],
         },
-        deadline: "28/08/2026 - 04/09/2026",
-        priority: true,
+        deadline: "04/09/2026",
+        priority: false,
         expired: false,
         big: true,
     },
@@ -212,8 +222,8 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             "Modelagem_Sem16_Aula4.docx",
             ],
         },
-        deadline: "26/08/2026 (HOJE)",
-        priority: true,
+        deadline: "26/08/2026",
+        priority: false,
         expired: false,
         big: true,
     },
@@ -230,7 +240,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
             "Modelagem_Sem17_Aula4.docx",
             ],
         },
-        deadline: "30/08/2026 (DOMINGO)",
+        deadline: "30/08/2026",
         priority: false,
         expired: false,
         big: true,
@@ -238,17 +248,18 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
 
     {
         summary: "Registros Semana 18. Pelo menos uma aula.",
-        items: ["Aula 2 - Roteiro"],
+        items: ["Aula 1 - Roteiro", "Aula 2 - Roteiro"],
         downloads: {
             folder: "/documentos/modelagem/sem18/",
             files: [
+            "Modelagem_Sem18_Aula1.docx",
             "Modelagem_Sem18_Aula2.docx",
             ],
         },
-        deadline: "30/08/2026 (DOMINGO)",
+        deadline: "30/08/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
     },
 ]
 
@@ -281,7 +292,7 @@ const __PROGRAMACAO_MOBILE = [
             ]
         },
         deadline: "30/08/2026",
-        priority: true,
+        priority: false,
         expired: false,
         big: true,
     },
@@ -331,8 +342,8 @@ const __INTELIGENCIA_ARTIFICIAL = [
             folder: "/documentos/ia/sem17/",
             files: ["InteligenciaArtificial_Sem17.docx"],
         },
-        deadline: "30/08/2026 (DOMINGO)",
-        priority: true,
+        deadline: "30/08/2026",
+        priority: false,
         expired: false,
         big: false,
     },
@@ -409,7 +420,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
             "TCC_MaterialDeApoio_SEM18.xlsx",
             ],
         },
-        deadline: "23/08/2026 (DOMINGO)",
+        deadline: "23/08/2026",
         priority: false,
         expired: true,
         big: true,
@@ -430,8 +441,8 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
             "TCC_Roteiro_Aula3_SEM19.docx",
             ],
         },
-        deadline: "30/08/2026 (DOMINGO)",
-        priority: true,
+        deadline: "30/08/2026",
+        priority: false,
         expired: false,
         big: true,
     },
@@ -479,7 +490,20 @@ const __PROGRAMACAO_FRONTEND = [
             files: ["Frontend_Sem17.docx"],
         },
         deadline: "28/08/2026",
-        priority: true,
+        priority: false,
+        expired: false,
+        big: false,
+    },
+
+    {
+        summary: "Registro (Semana 18)",
+        items: ["Aula 3: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/frontend/sem18/",
+            files: ["Frontend_Sem18.docx"],
+        },
+        deadline: "04/09/2026",
+        priority: false,
         expired: false,
         big: false,
     },
@@ -488,7 +512,7 @@ const __PROGRAMACAO_FRONTEND = [
 const __PROGRAMACAO_BACKEND = [
     {
         summary: "Registro (Semana 15)",
-        items: ["Aula 2: Roteiro Adaptado"],
+        items: ["Aula 3: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/backend/sem15/",
             files: ["Backend_Sem15.docx"],
@@ -520,7 +544,20 @@ const __PROGRAMACAO_BACKEND = [
             files: ["Backend_Sem17.docx"],
         },
         deadline: "28/08/2026",
-        priority: true,
+        priority: false,
+        expired: false,
+        big: false,
+    },
+
+    {
+        summary: "Registro (Semana 18)",
+        items: ["Aula 3: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/backend/sem18/",
+            files: ["Backend_Sem18.docx"],
+        },
+        deadline: "04/09/2026",
+        priority: false,
         expired: false,
         big: false,
     },
@@ -561,7 +598,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
             files: ["Versionamento_Sem17.docx"],
         },
         deadline: "28/08/2026",
-        priority: true,
+        priority: false,
         expired: false,
         big: false,
     },
@@ -573,8 +610,8 @@ const __VERSIONAMENTO_DE_CODIGO = [
             folder: "/documentos/versionamento/sem18/",
             files: ["Versionamento_Sem18.docx"],
         },
-        deadline: "28/08/2026",
-        priority: true,
+        deadline: "04/09/2026",
+        priority: false,
         expired: false,
         big: false,
     },
@@ -600,6 +637,63 @@ const __SEDUC_SP = [
 ]
 
 ////////////////////////////////////////////////////////////////////////////////
+
+function atualizarPrazos(materias) {
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0);
+
+    const regexData = /(\d{2})\/(\d{2})\/(\d{4})/;
+
+    materias.forEach(materia => {
+        if (!materia || typeof materia.deadline !== 'string') {
+            return; 
+        }
+
+        const match = materia.deadline.match(regexData);
+
+        if (match) {
+            const dia = parseInt(match[1], 10);
+            const mes = parseInt(match[2], 10) - 1;
+            const ano = parseInt(match[3], 10);
+
+            const dataPrazo = new Date(ano, mes, dia);
+            dataPrazo.setHours(0, 0, 0, 0);
+
+            const diferencaTempo = dataPrazo.getTime() - hoje.getTime();
+            const diferencaDias = Math.ceil(diferencaTempo / (1000 * 60 * 60 * 24));
+
+            if (diferencaDias < 0) {
+                materia.expired = true;
+            } else {
+                materia.expired = false;
+            }
+
+            if (diferencaDias === 0) {
+                if (!materia.deadline.includes('(HOJE)')) {
+                    materia.deadline = `${match[0]} (HOJE)`;
+                }
+            }
+
+            if (diferencaDias >= 0 && diferencaDias <= 3) {
+                materia.priority = true;
+            } else {
+                materia.priority = false;
+            }
+        }
+    });
+}
+
+const todasAsMaterias = [
+    ...(typeof __PORTUGUES !== 'undefined' ? __PORTUGUES : []),
+    ...(typeof __MATEMATICA !== 'undefined' ? __MATEMATICA : []),
+    ...(typeof __HISTORIA !== 'undefined' ? __HISTORIA : []),
+    ...(typeof __MODELAGEM_DE_BANCO_DE_DADOS !== 'undefined' ? __MODELAGEM_DE_BANCO_DE_DADOS : []),
+    ...(typeof __PROGRAMACAO_MOBILE !== 'undefined' ? __PROGRAMACAO_MOBILE : []),
+    ...(typeof __INTELIGENCIA_ARTIFICIAL !== 'undefined' ? __INTELIGENCIA_ARTIFICIAL : [])
+];
+
+atualizarPrazos(todasAsMaterias);
+
 
 export const subjects_contents = {
     portugues: __PORTUGUES,
