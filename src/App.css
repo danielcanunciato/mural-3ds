@@ -255,7 +255,6 @@ body {
   filter: drop-shadow(0 0 5px rgb(60, 41, 68));
 
   height: 350px;
-  min-width: 320px;
   max-height: 350px;
 
   overflow: hidden;

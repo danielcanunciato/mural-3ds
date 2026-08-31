@@ -1,3 +1,5 @@
+import { FileEdit } from "lucide-react"
+
 // MATERIAS DA BASE \\
 let __PORTUGUES = [
     {
@@ -295,6 +297,23 @@ let __PROGRAMACAO_MOBILE = [
         priority: false,
         expired: false,
         big: true,
+    },
+
+    {
+        summary: "Roteiros (Semana 17) [UMA AULA PELO MENOS]",
+        items: [
+            "Aula 1",
+        ],
+        downloads: {
+            folder: "/docmentos/mobile/sem17/",
+            files: [
+                "Mobile_Semana17_Aula1.docx",
+            ]
+        },
+        deadline: "06/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
     },
 ]
 
