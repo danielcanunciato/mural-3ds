@@ -26,12 +26,7 @@ let __PORTUGUES = [
       {
         summary: "Apostila (* = NOVO)",
         items: [
-            "Aula 1",
-            "Aula 2",
-            "Aula 3",
-            "Aula 4",
-            "Aula 5",
-            "*Aula 6"
+            "Aula 1 até a Aula 6",
         ],
         deadline: "30/09/2026",
         priority: false,

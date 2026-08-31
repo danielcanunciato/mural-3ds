@@ -130,7 +130,7 @@
 
         <ul className="card-list">
           {content.items.map((value, index) => {
-            if (big && !shown && index >= 2) return null;
+            if (big && !shown && index >= 1) return null;
 
             return (
               <li className="card-item" key={index}>
