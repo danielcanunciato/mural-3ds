@@ -1,5 +1,5 @@
 // MATERIAS DA BASE \\
-const __PORTUGUES = [
+let __PORTUGUES = [
     {
         summary: "Entrega da Redação 01 (Tarefas)",
         items: [
@@ -7,7 +7,7 @@ const __PORTUGUES = [
         ],
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
     },
 
     {
@@ -17,7 +17,7 @@ const __PORTUGUES = [
         ],
         deadline: "24/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
       },
   
@@ -44,7 +44,7 @@ const __PORTUGUES = [
         ],
         deadline: "12/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
       },
   
@@ -55,7 +55,7 @@ const __PORTUGUES = [
         ],
         deadline: "18/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
       },
   
@@ -110,7 +110,7 @@ const __PORTUGUES = [
         },
     ]
     
-const __MATEMATICA = [
+let __MATEMATICA = [
     {
         summary: "Tarefas",
         items: [
@@ -134,7 +134,7 @@ const __MATEMATICA = [
     },
 ]
 
-const __HISTORIA = [
+let __HISTORIA = [
     {
         summary:
             "Seminário de História: Criar uma linha do tempo em cartaz feito com papel Kraft. Datas dos grupos 1 e 2 foram extendidas para a semana posterior.",
@@ -191,7 +191,7 @@ const __HISTORIA = [
 // MATERIAS DO TECNICO \\
 
 // KASSIO EUGENIO 
-const __MODELAGEM_DE_BANCO_DE_DADOS = [
+let __MODELAGEM_DE_BANCO_DE_DADOS = [
     {
         summary: "Registros Semana 15 (EM GRUPO). Pelo menos uma aula.",
         items: ["Aula 1 - Roteiro", "Aula 2 - Roteiro", "Aula 3 - Slide (10 e 11)", "Aula 4 - Roteiro"],
@@ -206,7 +206,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -263,7 +263,7 @@ const __MODELAGEM_DE_BANCO_DE_DADOS = [
     },
 ]
 
-const __PROGRAMACAO_MOBILE = [
+let __PROGRAMACAO_MOBILE = [
     {
         summary: "Roteiros (Semana 15) [UMA AULA PELO MENOS]",
         items: [
@@ -272,7 +272,7 @@ const __PROGRAMACAO_MOBILE = [
         ],
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -299,7 +299,7 @@ const __PROGRAMACAO_MOBILE = [
 ]
 
 // ROGÉRIO ROCHA
-const __INTELIGENCIA_ARTIFICIAL = [
+let __INTELIGENCIA_ARTIFICIAL = [
     {
         summary: "Roteiro (Semana 15)",
         items: ["Aula 3 - Roteiro"],
@@ -309,7 +309,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -322,7 +322,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -331,7 +331,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
         items: ["Relatório em Folha de Almaço"],
         deadline: "18/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -363,7 +363,7 @@ const __INTELIGENCIA_ARTIFICIAL = [
 
 ]
 
-const __PROJETO_MULTIDISCIPLINAR_TCC = [
+let __PROJETO_MULTIDISCIPLINAR_TCC = [
     {
         summary: "Semana 15: Leitura dos slides e roteiro",
         items: ["Documentação", "Quadro Kanban", "Aula 1 em slide de PowerPoint", "Aula 2 em documento pdf"],
@@ -373,7 +373,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -396,7 +396,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -413,7 +413,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -435,7 +435,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
         },
         deadline: "23/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -462,7 +462,7 @@ const __PROJETO_MULTIDISCIPLINAR_TCC = [
 ]
 
 // JOÃO YOKADA
-const __PROGRAMACAO_FRONTEND = [
+let __PROGRAMACAO_FRONTEND = [
     {
         summary: "Registro (Semana 15)",
         items: ["Aula 3: Roteiro Adaptado"],
@@ -478,7 +478,7 @@ const __PROGRAMACAO_FRONTEND = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: true,
     },
 
@@ -491,7 +491,7 @@ const __PROGRAMACAO_FRONTEND = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -522,7 +522,7 @@ const __PROGRAMACAO_FRONTEND = [
     },
 ]
 
-const __PROGRAMACAO_BACKEND = [
+let __PROGRAMACAO_BACKEND = [
     {
         summary: "Registro (Semana 15)",
         items: ["Aula 3: Roteiro Adaptado"],
@@ -532,7 +532,7 @@ const __PROGRAMACAO_BACKEND = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -545,7 +545,7 @@ const __PROGRAMACAO_BACKEND = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -576,7 +576,7 @@ const __PROGRAMACAO_BACKEND = [
     },
 ]
 
-const __VERSIONAMENTO_DE_CODIGO = [
+let __VERSIONAMENTO_DE_CODIGO = [
     {
         summary: "Registro (Semana 15)",
         items: ["Semana 15: Aula 2"],
@@ -586,7 +586,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -599,7 +599,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
         },
         deadline: "21/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     },
 
@@ -633,7 +633,7 @@ const __VERSIONAMENTO_DE_CODIGO = [
 ////////////////////////////////////////////////////////////////////////////////
 
 // ATIVIDADES DA ESCOLA / SEDUC-SP
-const __SEDUC_SP = [
+let __SEDUC_SP = [
     {
         summary: "Prepara SP - Simulados",
         items: [
@@ -644,7 +644,7 @@ const __SEDUC_SP = [
         ],
         deadline: "24/08/2026",
         priority: false,
-        expired: true,
+        expired: false,
         big: false,
     }
 ]
@@ -673,7 +673,7 @@ function atualizarPrazos(materias) {
             dataPrazo.setHours(0, 0, 0, 0);
 
             const diferencaTempo = dataPrazo.getTime() - hoje.getTime();
-            const diferencaDias = Math.ceil(diferencaTempo / (1000 * 60 * 60 * 24));
+            const diferencaDias = Math.round(diferencaTempo / (1000 * 60 * 60 * 24));
 
             if (diferencaDias < 0) {
                 materia.expired = true;
@@ -696,13 +696,18 @@ function atualizarPrazos(materias) {
     });
 }
 
+
 const todasAsMaterias = [
     ...(typeof __PORTUGUES !== 'undefined' ? __PORTUGUES : []),
     ...(typeof __MATEMATICA !== 'undefined' ? __MATEMATICA : []),
     ...(typeof __HISTORIA !== 'undefined' ? __HISTORIA : []),
     ...(typeof __MODELAGEM_DE_BANCO_DE_DADOS !== 'undefined' ? __MODELAGEM_DE_BANCO_DE_DADOS : []),
     ...(typeof __PROGRAMACAO_MOBILE !== 'undefined' ? __PROGRAMACAO_MOBILE : []),
-    ...(typeof __INTELIGENCIA_ARTIFICIAL !== 'undefined' ? __INTELIGENCIA_ARTIFICIAL : [])
+    ...(typeof __INTELIGENCIA_ARTIFICIAL !== 'undefined' ? __INTELIGENCIA_ARTIFICIAL : []),
+    ...(typeof __PROJETO_MULTIDISCIPLINAR_TCC !== 'undefined' ? __PROJETO_MULTIDISCIPLINAR_TCC : []),
+    ...(typeof __PROGRAMACAO_FRONTEND !== 'undefined' ? __PROGRAMACAO_FRONTEND : []),
+    ...(typeof __PROGRAMACAO_BACKEND !== 'undefined' ? __PROGRAMACAO_BACKEND : []),
+    ...(typeof __VERSIONAMENTO_DE_CODIGO !== 'undefined' ? __VERSIONAMENTO_DE_CODIGO : []),
 ];
 
 atualizarPrazos(todasAsMaterias);
