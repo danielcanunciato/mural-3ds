@@ -253,7 +253,7 @@ let __MODELAGEM_DE_BANCO_DE_DADOS = [
             "Modelagem_Sem18_Aula2.docx",
             ],
         },
-        deadline: "30/08/2026",
+        deadline: "06/09/2026",
         priority: false,
         expired: false,
         big: true,
