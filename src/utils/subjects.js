@@ -105,6 +105,18 @@ let __PORTUGUES = [
             expired: false,
             big: false,
         },
+
+        {
+            summary: "Tarefas SP",
+            items: [
+                "Tarefa 3: Modernismo: Terceira Geração I",
+                "Tarefa 4: Modernismo: Terceira Geração II",
+            ],
+            deadline: "08/09/2026",
+            priority: false,
+            expired: false,
+            big: false,
+        },
     ]
     
 let __MATEMATICA = [
@@ -660,7 +672,18 @@ let __SEDUC_SP = [
         priority: false,
         expired: false,
         big: false,
-    }
+    },
+
+    {
+        summary: "Pesquisas de Campo",
+        items: [
+            "Avaliação das Práticas PEI - APP 2ª edição 2026"
+        ],
+        deadline: "18/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
 ]
 
 ////////////////////////////////////////////////////////////////////////////////
