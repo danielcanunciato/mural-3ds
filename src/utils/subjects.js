@@ -426,7 +426,7 @@ let __INTELIGENCIA_ARTIFICIAL = [
     },
 
     {
-        summary: "Roteiro (Semana 18) ´PRAZO EXTENDIDO]",
+        summary: "Roteiro (Semana 18) [PRAZO EXTENDIDO]",
         items: ["Aula 3 - Roteiro"],
         downloads: {
             folder: "/documentos/ia/sem18/",
