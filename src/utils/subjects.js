@@ -193,6 +193,18 @@ let __HISTORIA = [
         expired: false,
         big: false,
     },
+
+    {
+        summary:
+            "Apostila",
+        items: [
+            "Aula 1 até a Aula 12"
+        ],
+        deadline: "18/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    }
 ]
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -270,11 +282,29 @@ let __MODELAGEM_DE_BANCO_DE_DADOS = [
         expired: false,
         big: true,
     },
+
+    {
+        summary: "Registros Semana 19. Pelo menos uma aula.",
+        items: ["Aula 1 - Roteiro", "Aula 2 - Roteiro", "Aula 3 - Roteiro", "Aula 4 - Roteiro"],
+        downloads: {
+            folder: "/documentos/modelagem/sem18/",
+            files: [
+            "Modelagem_Sem18_Aula1.docx",
+            "Modelagem_Sem18_Aula2.docx",
+            "Modelagem_Sem18_Aula3.docx",
+            "Modelagem_Sem18_Aula4.docx",
+            ],
+        },
+        deadline: "06/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
+    },
 ]
 
 let __PROGRAMACAO_MOBILE = [
     {
-        summary: "Roteiros (Semana 15) [UMA AULA PELO MENOS]",
+        summary: "Roteiros (Semana 15). Pelo menos uma aula.",
         items: [
             "Aula 1 - Perguntas",
             "Aula 2 - Perguntas"
@@ -286,7 +316,7 @@ let __PROGRAMACAO_MOBILE = [
     },
 
     {
-        summary: "Roteiros (Semana 16)",
+        summary: "Roteiros (Semana 16). Pelo menos uma aula.",
         items: [
             "Aula 3 - Atividade no Teams",
             "Aula 4 - Atividade no Teams"
@@ -307,46 +337,67 @@ let __PROGRAMACAO_MOBILE = [
     },
 
     {
-        summary: "Roteiros (Semana 17) [UMA AULA PELO MENOS]",
+        summary: "Roteiros (Semana 17). Pelo menos uma aula.",
         items: [
-            "Aula 1",
+            "Aula 1 - Roteiro", "Aula 2 - Roteiro", "Aula 4 - Roteiro",
         ],
         downloads: {
             folder: "/docmentos/mobile/sem17/",
             files: [
                 "Mobile_Semana17_Aula1.docx",
+                "Mobile_Semana17_Aula2.docx",
+                "Mobile_Semana17_Aula4.docx",
             ]
         },
         deadline: "06/09/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
+    },
+
+    {
+        summary: "Roteiros (Semana 18). Pelo menos uma aula.",
+        items: [
+            "Aula 1 - Roteiro", "Aula 2 - Roteiro", "Aula 3 - Roteiro",
+        ],
+        downloads: {
+            folder: "/docmentos/mobile/sem18/",
+            files: [
+                "Mobile_Semana18_Aula1.docx",
+                "Mobile_Semana18_Aula2.docx",
+                "Mobile_Semana18_Aula3.docx",
+            ]
+        },
+        deadline: "06/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
     },
 ]
 
 // ROGÉRIO ROCHA
 let __INTELIGENCIA_ARTIFICIAL = [
     {
-        summary: "Roteiro (Semana 15)",
+        summary: "Roteiro (Semana 15) [PRAZO EXTENDIDO]",
         items: ["Aula 3 - Roteiro"],
         downloads: {
             folder: "/documentos/ia/sem15/",
             files: ["InteligenciaArtificial_Sem15.docx"],
         },
-        deadline: "21/08/2026",
+        deadline: "05/09/2026",
         priority: false,
         expired: false,
         big: false,
     },
 
     {
-        summary: "Roteiro (Semana 16)",
+        summary: "Roteiro (Semana 16) [PRAZO EXTENDIDO]",
         items: ["Aula 3 - Roteiro"],
         downloads: {
             folder: "/documentos/ia/sem16/",
             files: ["InteligenciaArtificial_Sem16.docx"],
         },
-        deadline: "21/08/2026",
+        deadline: "05/09/2026",
         priority: false,
         expired: false,
         big: false,
@@ -362,26 +413,39 @@ let __INTELIGENCIA_ARTIFICIAL = [
     },
 
     {
-        summary: "Roteiro (Semana 17)",
+        summary: "Roteiro (Semana 17) [PRAZO EXTENDIDO]",
         items: ["Aula 3 - Roteiro"],
         downloads: {
             folder: "/documentos/ia/sem17/",
             files: ["InteligenciaArtificial_Sem17.docx"],
         },
-        deadline: "30/08/2026",
+        deadline: "05/09/2026",
         priority: false,
         expired: false,
         big: false,
     },
 
     {
-        summary: "Roteiro (Semana 18)",
+        summary: "Roteiro (Semana 18) ´PRAZO EXTENDIDO]",
         items: ["Aula 3 - Roteiro"],
         downloads: {
             folder: "/documentos/ia/sem18/",
             files: ["InteligenciaArtificial_Sem18.docx"],
         },
-        deadline: "30/08/2026",
+        deadline: "05/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
+
+    {
+        summary: "Roteiro (Semana 19)",
+        items: ["Aula 3 - Roteiro"],
+        downloads: {
+            folder: "/documentos/ia/sem19/",
+            files: ["InteligenciaArtificial_Sem19.docx"],
+        },
+        deadline: "06/09/2026",
         priority: false,
         expired: false,
         big: false,
@@ -471,6 +535,7 @@ let __PROJETO_MULTIDISCIPLINAR_TCC = [
             "Documentação",
             "Quadro Kanban",
             "Aula 1, 2 e 3: Documento em pdf",
+            "Melhoria contínua do MVP",
         ],
         downloads: {
             folder: "/documentos/tcc/sem19/",
@@ -481,6 +546,29 @@ let __PROJETO_MULTIDISCIPLINAR_TCC = [
             ],
         },
         deadline: "30/08/2026",
+        priority: false,
+        expired: false,
+        big: true,
+    },
+
+    {
+        summary: "Semana 20: Leitura dos slides e roteiro",
+        items: [
+            "Documentação",
+            "Quadro Kanban",
+            "Aula 1, 2 e 3: Documento em pdf",
+            "Formularío para pesquisa de campo",
+        ],
+        downloads: {
+            folder: "/documentos/tcc/sem20/",
+            files: [
+            "TCC_Roteiro_Aula1_SEM20.docx",
+            "TCC_Roteiro_Aula2_SEM20.docx",
+            "TCC_Roteiro_Aula3_SEM20.docx",
+            "TCC_MaterialDeApoio_SEM20.xlsx",
+            ],
+        },
+        deadline: "06/09/2026",
         priority: false,
         expired: false,
         big: true,
@@ -546,6 +634,19 @@ let __PROGRAMACAO_FRONTEND = [
         expired: false,
         big: false,
     },
+
+    {
+        summary: "Registro (Semana 19)",
+        items: ["Aula 3: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/frontend/sem19/",
+            files: ["Frontend_Sem19.docx"],
+        },
+        deadline: "11/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
 ]
 
 let __PROGRAMACAO_BACKEND = [
@@ -600,12 +701,25 @@ let __PROGRAMACAO_BACKEND = [
         expired: false,
         big: false,
     },
+
+    {
+        summary: "Registro (Semana 19)",
+        items: ["Aula 3: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/backend/sem19/",
+            files: ["Backend_Sem19.docx"],
+        },
+        deadline: "11/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
 ]
 
 let __VERSIONAMENTO_DE_CODIGO = [
     {
         summary: "Registro (Semana 15)",
-        items: ["Semana 15: Aula 2"],
+        items: ["Aula 2: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/versionamento/sem15/",
             files: ["Versionamento_Sem15.docx"],
@@ -618,7 +732,7 @@ let __VERSIONAMENTO_DE_CODIGO = [
 
     {
         summary: "Registro (Semana 16)",
-        items: ["Semana 16: Aula 3"],
+        items: ["Aula 3: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/versionamento/sem16/",
             files: ["Versionamento_Sem16.docx"],
@@ -631,7 +745,7 @@ let __VERSIONAMENTO_DE_CODIGO = [
 
     {
         summary: "Registro (Semana 17)",
-        items: ["Semana 17: Aula 3"],
+        items: ["Aula 3: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/versionamento/sem17/",
             files: ["Versionamento_Sem17.docx"],
@@ -644,12 +758,25 @@ let __VERSIONAMENTO_DE_CODIGO = [
 
     {
         summary: "Registro (Semana 18)",
-        items: ["Semana 18: Aula 3"],
+        items: ["Aula 3: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/versionamento/sem18/",
             files: ["Versionamento_Sem18.docx"],
         },
         deadline: "04/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
+
+    {
+        summary: "Registro (Semana 19)",
+        items: ["Aula 3: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/versionamento/sem19/",
+            files: ["Versionamento_Sem19.docx"],
+        },
+        deadline: "11/09/2026",
         priority: false,
         expired: false,
         big: false,
