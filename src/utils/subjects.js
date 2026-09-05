@@ -27,6 +27,7 @@ let __PORTUGUES = [
         summary: "Apostila (* = NOVO)",
         items: [
             "Aula 1 até a Aula 6",
+            "*Aula 11 até a Aula 12"
         ],
         deadline: "30/09/2026",
         priority: false,
@@ -113,6 +114,17 @@ let __PORTUGUES = [
                 "Tarefa 4: Modernismo: Terceira Geração II",
             ],
             deadline: "08/09/2026",
+            priority: false,
+            expired: false,
+            big: false,
+        },
+
+        {
+            summary: "Tarefas SP",
+            items: [
+                "Tarefa 5: Resenha e reflexão crítica",
+            ],
+            deadline: "10/09/2026",
             priority: false,
             expired: false,
             big: false,
@@ -811,6 +823,17 @@ let __SEDUC_SP = [
         expired: false,
         big: false,
     },
+
+    {
+        summary: "Pesquisas de Campo",
+        items: [
+            "Pesquisa de Satisfação sobre Alimentação Escolar - Anos Finais e Ensino Médio"
+        ],
+        deadline: "23/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+    },
 ]
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -872,6 +895,7 @@ const todasAsMaterias = [
     ...(typeof __PROGRAMACAO_FRONTEND !== 'undefined' ? __PROGRAMACAO_FRONTEND : []),
     ...(typeof __PROGRAMACAO_BACKEND !== 'undefined' ? __PROGRAMACAO_BACKEND : []),
     ...(typeof __VERSIONAMENTO_DE_CODIGO !== 'undefined' ? __VERSIONAMENTO_DE_CODIGO : []),
+    ...(typeof __SEDUC_SP !== 'undefined' ? __SEDUC_SP : []),
 ];
 
 atualizarPrazos(todasAsMaterias);

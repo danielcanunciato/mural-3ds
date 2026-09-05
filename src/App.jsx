@@ -143,9 +143,6 @@ export default function App() {
       return timeA - timeB; 
     });
   }
-  
-  
-  
 
   const getSortedPriority = () => {
     const priorityItems = [];
@@ -168,6 +165,7 @@ export default function App() {
   return (
     <main>
       <img className="title-img" src={"/titulo.png"} />
+      <h1 style={{textAlign: "center", fontSize: "4rem", filter: "drop-shadow(0 0 3px white)"}}>3º BIMESTRE</h1>
       <h2 className="description">
         Atividades recentes serão mostrados aqui com o prazo.
       </h2>
