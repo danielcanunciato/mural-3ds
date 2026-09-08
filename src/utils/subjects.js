@@ -1,5 +1,3 @@
-import { FileEdit } from "lucide-react"
-
 // MATERIAS DA BASE \\
 let __PORTUGUES = [
     {
@@ -647,6 +645,19 @@ let __PROGRAMACAO_FRONTEND = [
         expired: false,
         big: false,
     },
+
+    {
+        summary: "Atividade Bimestral",
+        items: [
+            "Criar um site de portfólio com todas as 7 matérias do técnico",
+            "Hospedar o site no Vercel (ReactJS) ou no GitHub Pages (Static)",
+            "O site deve conter uma página pra cada máteria contendo um resumo da matéria e uma print do envio de cada semana dessa matéria"
+        ],
+        deadline: "28/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
+    },
 ]
 
 let __PROGRAMACAO_BACKEND = [
@@ -714,6 +725,19 @@ let __PROGRAMACAO_BACKEND = [
         expired: false,
         big: false,
     },
+    
+    {
+        summary: "Atividade Bimestral",
+        items: [
+            "Criar um site de portfólio com todas as 7 matérias do técnico",
+            "Hospedar o site no Vercel (ReactJS) ou no GitHub Pages (Static)",
+            "O site deve conter uma página pra cada máteria contendo um resumo da matéria e uma print do envio de cada semana dessa matéria"
+        ],
+        deadline: "28/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
+    },
 ]
 
 let __VERSIONAMENTO_DE_CODIGO = [
@@ -780,6 +804,19 @@ let __VERSIONAMENTO_DE_CODIGO = [
         priority: false,
         expired: false,
         big: false,
+    },
+    
+    {
+        summary: "Atividade Bimestral",
+        items: [
+            "Criar um site de portfólio com todas as 7 matérias do técnico",
+            "Hospedar o site no Vercel (ReactJS) ou no GitHub Pages (Static)",
+            "O site deve conter uma página pra cada máteria contendo um resumo da matéria e uma print do envio de cada semana dessa matéria"
+        ],
+        deadline: "28/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
     },
 ]
 
