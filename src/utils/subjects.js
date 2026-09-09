@@ -87,7 +87,7 @@ let __PORTUGUES = [
               "GRUPO 2: Guimarães Rosa",
               "GRUPO 3: Clarice Lispector",
             ],
-            deadline: "08/09/2026",
+            deadline: "09/09/2026",
             priority: false,
             expired: false,
             big: true,
