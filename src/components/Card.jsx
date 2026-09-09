@@ -11,7 +11,6 @@
     Eye,
     EyeOff,
     Check,
-    Columns3Cog,
     X
   } from "lucide-react"; 
 

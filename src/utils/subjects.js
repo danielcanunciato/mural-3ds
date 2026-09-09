@@ -146,6 +146,34 @@ let __PORTUGUES = [
         big: false,
         concluded: false,
     },
+
+    {
+        id: 110,
+        subject: "portugues",
+        summary: "Tarefas SP",
+        items: [
+            "Tarefa 5: Resenha e reflexão crítica"
+        ],
+        deadline: "08/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+        concluded: false,
+    },
+
+    {
+        id: 111,
+        subject: "portugues",
+        summary: "Tarefas SP",
+        items: [
+            "Tarefa 8: Manifesto e Intervenção Social"
+        ],
+        deadline: "16/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+        concluded: false,
+    },
 ];
 
 let __MATEMATICA = [
@@ -408,7 +436,7 @@ let __MODELAGEM_DE_BANCO_DE_DADOS = [
         items: [
             "Avaliação Bimestral [3º BIMESTRE]"
         ],
-        deadline: "10/09/2026",
+        deadline: "13/09/2026",
         priority: false,
         expired: false,
         big: true,
@@ -485,7 +513,7 @@ let __PROGRAMACAO_MOBILE = [
         subject: "mobile",
         summary: "Roteiros (Semana 18). Pelo menos uma aula.",
         items: [
-            "Aula 1 - Roteiro",
+            "Aula 1 - Roteiro : ATÉ 08/09/2026",
             "Aula 2 - Roteiro",
             "Aula 3 - Roteiro",
         ],
@@ -509,9 +537,9 @@ let __PROGRAMACAO_MOBILE = [
         subject: "mobile",
         summary: "Avaliação",
         items: [
-            "Avalaição Bimestral [3º BIMESTRE]"
+            "Avaliação Bimestral [3º BIMESTRE]"
         ],
-        deadline: "10/09/2026",
+        deadline: "13/09/2026",
         priority: false,
         expired: false,
         big: true,
@@ -629,7 +657,7 @@ let __INTELIGENCIA_ARTIFICIAL = [
         deadline: "13/09/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
         concluded: false,
     },
 
@@ -926,7 +954,7 @@ let __PROGRAMACAO_FRONTEND = [
         deadline: "28/09/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
         concluded: false,
     },
 ];
@@ -1024,7 +1052,7 @@ let __PROGRAMACAO_BACKEND = [
         deadline: "28/09/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
         concluded: false,
     },
 ];
@@ -1122,7 +1150,7 @@ let __VERSIONAMENTO_DE_CODIGO = [
         deadline: "28/09/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
         concluded: false,
     },
 ];
