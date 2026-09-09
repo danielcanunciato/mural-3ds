@@ -525,7 +525,7 @@ let __PROGRAMACAO_MOBILE = [
                 "Mobile_Semana18_Aula3.docx",
             ]
         },
-        deadline: "06/09/2026",
+        deadline: "13/09/2026",
         priority: false,
         expired: false,
         big: true,
