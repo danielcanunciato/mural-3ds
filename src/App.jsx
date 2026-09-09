@@ -35,6 +35,8 @@ export default function App() {
 
   const [targetDisabled, setTargetDisabled] = useState("0");
 
+  const [subject_items, setSubjectItems] = useState(subjects_contents)
+
   const JumpToSection = useCallback(
     (subjectID) => {
       const targetElement = subjectRef.current[subjectID];
@@ -105,16 +107,18 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+
   const getSortedItems = (subjectKey) => {
-    const items = subjects_contents[subjectKey] ? [...subjects_contents[subjectKey]].reverse() : [];
+    const getSubjectItems = subject_items
+
+    const items = getSubjectItems[subjectKey] ? [...getSubjectItems[subjectKey]].reverse() : [];
   
-    // Função auxiliar para converter "DD/MM/YYYY" para um timestamp numérico válido
     const parseDateBR = (dateStr) => {
       if (!dateStr) return 0;
       const parts = dateStr.split('/');
       if (parts.length !== 3) return 0;
       
-      // Transforma "DD/MM/YYYY" em "YYYY-MM-DD" para o JavaScript entender
       const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
       const timestamp = new Date(formattedDate).getTime();
       
@@ -122,9 +126,9 @@ export default function App() {
     };
   
     return [...items].sort((a, b) => {
-      // 1. Mantém os blocos separados: Priority (1) > Normal (2) > Expired (3)
       const getStatusWeight = (item) => {
         if (item.expired) return 3;
+        if (item.concluded) return 4;
         if (item.priority) return 1;
         return 2;
       };
@@ -136,22 +140,20 @@ export default function App() {
         return weightA - weightB;
       }
   
-      // 2. Se estiverem no mesmo bloco, ordena por data (Menores/Antigas no topo)
       const timeA = parseDateBR(a.deadline);
       const timeB = parseDateBR(b.deadline);
   
       return timeA - timeB; 
     });
-  }
-  
-  
-  
+  }  
 
   const getSortedPriority = () => {
+    const getSubjectItems = subject_items
+
     const priorityItems = [];
   
-    Object.keys(subjects_contents).forEach((subjectKey) => {
-      const items = subjects_contents[subjectKey] || [];
+    Object.keys(getSubjectItems).forEach((subjectKey) => {
+      const items = getSubjectItems[subjectKey] || [];
 
       const filtered = items.filter(item => item.priority === true);
   
@@ -164,6 +166,10 @@ export default function App() {
   };  
 
   const prioridades = getSortedPriority();
+
+  useEffect(()=>{
+    setSubjectItems(subjects_contents)
+  }, [subjects_contents])
 
   return (
     <main>
@@ -182,6 +188,9 @@ export default function App() {
 
       <p className="description" style={{marginTop: "-30px"}}>
         Cards de atividades com muita informação tem um botão de <span style={{color: "cyan"}}><b>Olho <Eye className="lricon" style={{color: "cyan", transform: "translateY(6px)"}} /></b></span> para expandir e mostrar mais informações
+      </p>
+      <p className="description" style={{marginTop: "-20px"}}>
+        Cards de atividades concluídas serão marcados como <span style={{color: "lime"}}><b>ATIVIDADE CONCLUÍDA</b></span>, as atividades que são marcadas como concluídas reiniciam a página devido a filtragem.
       </p>
 
       <h2 style={{ textAlign: "center", fontWeight: "bold", color: "#b9f7fa" }}>MATÉRIAS DO TÉCNICO</h2>
@@ -287,11 +296,13 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               downloads={item.downloads}
               isExpired={item.expired}
               isPriority={item.priority}
               big={item.big}
+              itemConcluded={item.concluded}
               delay={index * 60}
             />
           ))}
@@ -317,11 +328,13 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               downloads={item.downloads}
               isPriority={item.priority}
               isExpired={item.expired}
               big={item.big}
+              itemConcluded={item.concluded}
               delay={index * 60}
             />
           ))}
@@ -347,10 +360,12 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -377,10 +392,12 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -407,10 +424,12 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -437,10 +456,12 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -467,10 +488,12 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               downloads={item.downloads}
               isPriority={item.priority}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -503,9 +526,11 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -532,9 +557,11 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -561,11 +588,13 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               links={item.links}
               downloads={item.downloads}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />
@@ -599,10 +628,12 @@ export default function App() {
                 summary: item.summary,
                 items: item.items,
                 deadline: item.deadline,
+                id: item.id,
               }}
               isPriority={item.priority}
               downloads={item.downloads}
               isExpired={item.expired}
+              itemConcluded={item.concluded}
               big={item.big}
               delay={index * 60}
             />

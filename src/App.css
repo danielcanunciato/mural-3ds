@@ -212,7 +212,7 @@ body {
 }
 
 .section-subject {
-  width: 70vw;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: auto;
@@ -273,6 +273,11 @@ body {
   max-height: 1000px;
 }
 
+.card--concluded {
+  filter: drop-shadow(0 0 5px lime) brightness(75%);
+  background: linear-gradient(to left, rgb(30, 180, 30), var(--card-grad));
+}
+
 .show-btn {
   position: absolute;
   background: rgba(255,255,255,0.85);
@@ -328,6 +333,23 @@ body {
   list-style-type: none;  
 }
 
+.card-conclude {
+  display: block;
+  margin-left: -5px;
+  margin-top: -10px;
+}
+.card-conclude:hover {
+  display: block;
+  font-size: large;
+  cursor: pointer;
+  margin-left: -5px;
+  margin-top: -10px;
+
+  & .lricon {
+    transform: scale(1.05) translateY(5px);
+  }
+}
+
 .card-footer {
   display: block;
   margin-top: -10px;
@@ -348,6 +370,14 @@ body {
 }
 
 .priority-lesson {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: -30px;
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+}
+
+.concluded-lesson {
   font-weight: bold;
   text-align: right;
   margin-bottom: -30px;

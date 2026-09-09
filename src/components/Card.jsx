@@ -1,5 +1,5 @@
   // Packages
-  import React, { useState, memo } from "react";
+  import React, { useState, useEffect, memo } from "react";
 
   import { 
     MessageSquareQuote, 
@@ -9,9 +9,13 @@
     ExternalLink, 
     ClockAlert, 
     Eye,
-    EyeOff
+    EyeOff,
+    Check,
+    Columns3Cog,
+    X
   } from "lucide-react"; 
 
+  import { updateConcludedValue } from "../utils/subjects";
 
   // Buttons
   const DownloadButton = memo(function DownloadButton({ item_name, item_path }) {
@@ -90,10 +94,37 @@
       isPriority,
       isExpired,
       big,
+      itemConcluded,
       delay = 0,
     }) {
 
     const [shown, setShown] = useState(false)
+    const [itemExpired, setItemExpired] = useState(isExpired);
+    const [itemPriority, setItemPriority] = useState(isPriority);
+    const [concluded, setConcluded] = useState(itemConcluded);
+
+    const handleConclude = () => {
+      const newValue = !concluded;
+
+      if (newValue===true){setItemExpired(false); setItemPriority(false)}
+      else {setItemExpired(isExpired); setItemPriority(isPriority)}
+  
+      setConcluded(newValue);
+      updateConcludedValue(content.id, newValue);
+
+      location.reload();
+    };
+
+    useEffect(()=>{
+      if (concluded===true){
+        setItemExpired(false);
+        setItemPriority(false);
+      }
+    })
+
+    useEffect(() => {
+        setConcluded(Boolean(itemConcluded));
+    }, [itemConcluded]);
 
     const handleShowItems = () => {
       return setShown(!shown)
@@ -101,7 +132,7 @@
 
     return (
       <div
-        className={`card item-stroke ${isExpired ? "expired" : ""} ${isPriority ? "priority" : ""} ${big ? (shown ? "card--show" : "") : ""} card--enter`}
+        className={`card item-stroke ${concluded ? "card--concluded" : ""} ${itemExpired ? "expired" : ""} ${itemPriority ? "priority" : ""} ${big ? (shown ? "card--show" : "") : ""} card--enter`}
         style={{ animationDelay: `${delay}ms` }}
       >
 
@@ -113,8 +144,9 @@
           </button>
         }
 
-        {isExpired && <p className="expired-lesson">EXPIRADO</p>}
-        {isPriority && <p className="priority-lesson">PRIORIDADE</p>}
+        {concluded && <p className="concluded-lesson">ATIVIDADE CONCLUÍDA</p>}
+        {itemExpired && <p className="expired-lesson">EXPIRADO</p>}
+        {itemPriority && <p className="priority-lesson">PRIORIDADE</p>}
         
         <h2 className="card-title">
           <MessageSquareQuote id="title-icon" className="lricon" /> {teacher}
@@ -161,6 +193,17 @@
             <SubjectItems downloads={downloads} links={links} />
           )
         }
+
+        <p className={`card-conclude`} style={{ color: `${concluded ? "#fa8787" : "lime"}` }} onClick={handleConclude}>
+          
+          {concluded ? (
+            <X className="lricon small" style={{ color: "#fa8787" }} />
+          ) : (
+            <Check className="lricon small" style={{ color: "lime" }} />
+          )}
+
+          MARCAR COMO {concluded ? "NÃO CONCLUÍDO" : "CONCLUÍDO"}
+        </p>
 
         <p className={`card-footer ${!shown ? "footer-shown" : ""}`} style={{ color: "#f0a8a8" }}>
           <ClockAlert className="lricon small" style={{ color: "#f0a8a8" }} />{" "}
