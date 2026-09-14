@@ -167,7 +167,7 @@ export default function App() {
 
   const prioridades = getSortedPriority();
 
-  const __VERSION__ = "V1.5.37"
+  const __VERSION__ = "V1.5.38"
 
   useEffect(()=>{
     setSubjectItems(subjects_contents)
