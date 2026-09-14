@@ -211,6 +211,7 @@ let __MATEMATICA = [
         summary: "Tarefas",
         items: [
             "Tarefa 3: Trigonometria na circunferência trigonométrica",
+            "Tarefa 6: Resolução de problemas envolvendo trigonometria",
         ],
         deadline: "25/09/2026",
         priority: false,
@@ -1188,6 +1189,23 @@ let __SEDUC_SP = [
         big: false,
         concluded: false,
     },
+
+    {
+        id: 1102,
+        subject: "seducsp",
+        summary: "Especial Revisão Prova Paulista 3º Bimestre",
+        items: [
+            "Ciências da Natureza",
+            "Ciências Humanas",
+            "Linguagens",
+            "Matemática"
+        ],
+        deadline: "02/10/2026",
+        priority: false,
+        expired: false,
+        big: false,
+        concluded: false,
+    },
 ];
 
 // ============================================================================
@@ -1379,3 +1397,6 @@ if (findStorage) {
     atualizarPrazos(todasAsMaterias);
     saveConcludedValues();
 }
+
+//VERSIONING
+export const __VERSION__ = "V1.5.51"

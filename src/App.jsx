@@ -21,7 +21,7 @@ import {
 import { useEffect, useRef, useState, useCallback } from "react";
 
 import Card from "./components/Card";
-import { subjects_contents } from "./utils/subjects"
+import { subjects_contents, __VERSION__ } from "./utils/subjects"
 
 export default function App() {
   const subjectRef = useRef({});
@@ -166,8 +166,6 @@ export default function App() {
   };  
 
   const prioridades = getSortedPriority();
-
-  const __VERSION__ = "V1.5.50"
 
   useEffect(()=>{
     setSubjectItems(subjects_contents)
