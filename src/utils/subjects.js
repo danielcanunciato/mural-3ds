@@ -933,7 +933,7 @@ let __PROGRAMACAO_FRONTEND = [
         items: ["Aula 3: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/frontend/sem19/",
-            files: ["Frontend_Sem19.docx"],
+            files: ["Frontend_Sem19_Adaptado.docx"],
         },
         deadline: "11/09/2026",
         priority: false,
