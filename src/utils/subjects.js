@@ -262,7 +262,7 @@ let __HISTORIA = [
         big: false,
         concluded: false,
     },
-
+    
     {
         id: 302,
         subject: "historia",
@@ -283,7 +283,7 @@ let __HISTORIA = [
         big: false,
         concluded: false,
     },
-
+    
     {
         id: 303,
         subject: "historia",
@@ -296,7 +296,24 @@ let __HISTORIA = [
         expired: false,
         big: false,
         concluded: false,
-    }
+    },
+
+    {
+        id: 304,
+        subject: "historia",
+        summary: "Tarefas SP",
+        items: [
+            "Tarefa 4: Crise e desagregação da URSS",
+            "Tarefa 5: Jânio, Jango e o fim da democracia no Brasil",
+            "Tarefa 6: Ditadura civil-militar no Brasil e na América Latina",
+            "Tarefa 7: Resistência à ditadura",
+        ],
+        deadline: "19/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
+        concluded: false,
+    },
 ];
 
 // MATERIAS DO TECNICO \\
@@ -437,7 +454,7 @@ let __MODELAGEM_DE_BANCO_DE_DADOS = [
         items: [
             "Avaliação Bimestral [3º BIMESTRE]"
         ],
-        deadline: "13/09/2026",
+        deadline: "14/09/2026",
         priority: false,
         expired: false,
         big: true,
@@ -540,7 +557,7 @@ let __PROGRAMACAO_MOBILE = [
         items: [
             "Avaliação Bimestral [3º BIMESTRE]"
         ],
-        deadline: "13/09/2026",
+        deadline: "14/09/2026",
         priority: false,
         expired: false,
         big: true,
@@ -1399,4 +1416,4 @@ if (findStorage) {
 }
 
 //VERSIONING
-export const __VERSION__ = "V1.5.51"
+export const __VERSION__ = "V1.5.52"
