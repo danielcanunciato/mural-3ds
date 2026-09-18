@@ -983,7 +983,7 @@ let __PROGRAMACAO_FRONTEND = [
         items: ["Aula 3: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/frontend/sem20/",
-            files: ["Frontend_Sem20_AtividadePratica.docx", "Frontend_Sem20_Roteiro.docx"],
+            files: ["Frontend_Sem20_AtividadePratica.docx", "Frontend_Sem20_Roteiro.docx", "produto.jpg"],
         },
         deadline: "25/09/2026",
         priority: false,
@@ -1492,4 +1492,4 @@ if (findStorage) {
 }
 
 //VERSIONING
-export const __VERSION__ = "V1.5.53"
+export const __VERSION__ = "V1.5.54"
