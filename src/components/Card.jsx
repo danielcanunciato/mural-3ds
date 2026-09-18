@@ -14,7 +14,7 @@
     X
   } from "lucide-react"; 
 
-  import { updateConcludedValue } from "../utils/subjects";
+  import { updateConcludedValue } from "../data/subjects";
 
   // Buttons
   const DownloadButton = memo(function DownloadButton({ item_name, item_path }) {

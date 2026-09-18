@@ -18,3 +18,4 @@ git push origin main
 color 7
 echo.
 echo Git sequence completed successfully!
+pause

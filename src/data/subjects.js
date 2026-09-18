@@ -959,7 +959,7 @@ let __PROGRAMACAO_FRONTEND = [
         big: false,
         concluded: false,
     },
-
+    
     {
         id: 805,
         subject: "frontend",
@@ -973,6 +973,38 @@ let __PROGRAMACAO_FRONTEND = [
         priority: false,
         expired: false,
         big: true,
+        concluded: false,
+    },
+
+    {
+        id: 806,
+        subject: "frontend",
+        summary: "Registro (Semana 20)",
+        items: ["Aula 3: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/frontend/sem20/",
+            files: ["Frontend_Sem20_AtividadePratica.docx", "Frontend_Sem20_Roteiro.docx"],
+        },
+        deadline: "25/09/2026",
+        priority: false,
+        expired: false,
+        big: true,
+        concluded: false,
+    },
+
+    {
+        id: 807,
+        subject: "frontend",
+        summary: "Registro (Semana 21)",
+        items: ["Aula 2: Roteiro Adaptado"],
+        downloads: {
+            folder: "/documentos/frontend/sem21/",
+            files: ["Frontend_Sem21.docx"],
+        },
+        deadline: "25/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
         concluded: false,
     },
 ];
@@ -1073,6 +1105,36 @@ let __PROGRAMACAO_BACKEND = [
         big: true,
         concluded: false,
     },
+
+    {
+        id: 906,
+        subject: "backend",
+        summary: "Registro (Semana 20)",
+        items: [
+            "Mapa Mental: Comparar AWS Lambda com Azure Functions"
+        ],
+        deadline: "25/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+        concluded: false,
+    },
+
+    {
+        id: 907,
+        subject: "backend",
+        summary: "Registro (Semana 21)",
+        items: ["Aula 1: Roteito Adaptado"],
+        downloads: {
+            folder: "/documentos/backend/sem21/",
+            files: ["Backend_Sem21.docx"],
+        },
+        deadline: "25/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
+        concluded: false,
+    },
 ];
 
 let __VERSIONAMENTO_DE_CODIGO = [
@@ -1169,6 +1231,20 @@ let __VERSIONAMENTO_DE_CODIGO = [
         priority: false,
         expired: false,
         big: true,
+        concluded: false,
+    },
+
+    {
+        id: 1006,
+        subject: "versionamento",
+        summary: "Registro (Semana 20)",
+        items: [
+            "Fluxograma da Topologia da Mensagem"
+        ],
+        deadline: "25/09/2026",
+        priority: false,
+        expired: false,
+        big: false,
         concluded: false,
     },
 ];
@@ -1416,4 +1492,4 @@ if (findStorage) {
 }
 
 //VERSIONING
-export const __VERSION__ = "V1.5.52"
+export const __VERSION__ = "V1.5.53"

@@ -21,7 +21,7 @@ import {
 import { useEffect, useRef, useState, useCallback } from "react";
 
 import Card from "./components/Card";
-import { subjects_contents, __VERSION__ } from "./utils/subjects"
+import { subjects_contents, __VERSION__ } from "./data/subjects"
 
 export default function App() {
   const subjectRef = useRef({});
