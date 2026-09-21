@@ -211,12 +211,14 @@ let __MATEMATICA = [
         summary: "Tarefas",
         items: [
             "Tarefa 3: Trigonometria na circunferência trigonométrica",
+            "Tarefa 4: Funções trigonométricas",
+            "Tarefa 5: Lei dos senos e lei dos cossenos",
             "Tarefa 6: Resolução de problemas envolvendo trigonometria",
         ],
         deadline: "25/09/2026",
         priority: false,
         expired: false,
-        big: false,
+        big: true,
         concluded: false,
     },
 ];
