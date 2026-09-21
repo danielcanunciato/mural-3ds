@@ -34,8 +34,9 @@ let __PORTUGUES = [
         summary: "Apostila (* = NOVO)",
         items: [
             "Aula 1 até a Aula 6",
+            "Aula 7, 8, 9, 10, 13, 14, 17, 18"
         ],
-        deadline: "30/09/2026",
+        deadline: "28/09/2026",
         priority: false,
         expired: false,
         big: false,
@@ -139,19 +140,6 @@ let __PORTUGUES = [
         items: [
             "Tarefa 3: Modernismo: Terceira Geração I",
             "Tarefa 4: Modernismo: Terceira Geração II",
-        ],
-        deadline: "08/09/2026",
-        priority: false,
-        expired: false,
-        big: false,
-        concluded: false,
-    },
-
-    {
-        id: 110,
-        subject: "portugues",
-        summary: "Tarefas SP",
-        items: [
             "Tarefa 5: Resenha e reflexão crítica"
         ],
         deadline: "08/09/2026",
@@ -160,9 +148,8 @@ let __PORTUGUES = [
         big: false,
         concluded: false,
     },
-
     {
-        id: 111,
+        id: 110,
         subject: "portugues",
         summary: "Tarefas SP",
         items: [
@@ -1494,4 +1481,4 @@ if (findStorage) {
 }
 
 //VERSIONING
-export const __VERSION__ = "V1.5.54"
+export const __VERSION__ = "V1.5.57"
