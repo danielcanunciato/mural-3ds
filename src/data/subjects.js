@@ -1126,7 +1126,7 @@ let __PROGRAMACAO_BACKEND = [
         id: 907,
         subject: "backend",
         summary: "Registro (Semana 21)",
-        items: ["Aula 1: Roteito Adaptado"],
+        items: ["Aula 1: Roteiro Adaptado"],
         downloads: {
             folder: "/documentos/backend/sem21/",
             files: ["Backend_Sem21.docx"],
